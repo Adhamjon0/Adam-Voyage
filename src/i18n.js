@@ -9,6 +9,9 @@ import chinese from './locales/zh/translation.json';
 import japanese from './locales/ja/translation.json';
 import korean from './locales/ko/translation.json';
 import german from './locales/de/translation.json';
+import espangol from './locales/es/translation.json';
+import italian from './locales/iti/translation.json';
+
 
 i18n
     .use(initReactI18next)
@@ -21,7 +24,9 @@ i18n
             zh: { translation: chinese },
             ja: { translation: japanese },
             ko: { translation: korean },
-            de: { translation: german }
+            de: { translation: german },
+            es: { translation: espangol },
+            iti: { translation: italian }
         },
         lng: localStorage.getItem('i18nextLng') || 'en', // default English
         fallbackLng: 'en',

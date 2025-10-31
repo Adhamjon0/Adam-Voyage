@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 import {
-    BiLogoInstagramAlt,
-    BiLogoFacebook,
-    BiLogoTelegram,
-    BiLogoWhatsapp
-} from 'react-icons/bi';
+    FaInstagram,
+    FaFacebookF,
+    FaTelegramPlane,
+    FaWhatsapp,
+    FaEnvelope
+} from 'react-icons/fa'; // ✅ Oddiy va ishonchli iconlar
 
 export default function Footer() {
     const { t } = useTranslation();
@@ -36,17 +37,25 @@ export default function Footer() {
                 <div className="footer-section">
                     <h4 className="footer-title">{t("footer.connect")}</h4>
                     <div className="socials icons-only">
-                        <a href="https://instagram.com/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <BiLogoInstagramAlt />
+                        <a href="https://instagram.com/__adhamjon18" className="social-icon" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram />
                         </a>
                         <a href="https://www.facebook.com/adhamjon.sodiqov.2025/" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <BiLogoFacebook />
+                            <FaFacebookF />
                         </a>
                         <a href="https://wa.me/998917077291" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <BiLogoWhatsapp />
+                            <FaWhatsapp />
                         </a>
                         <a href="https://t.me/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <BiLogoTelegram />
+                            <FaTelegramPlane />
+                        </a>
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
+                            className="social-icon"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FaEnvelope />
                         </a>
                     </div>
                 </div>

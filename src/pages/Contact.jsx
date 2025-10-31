@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
+import { FaInstagram, FaWhatsapp, FaFacebookF, FaTelegramPlane, FaEnvelope } from 'react-icons/fa'; // ✅ to‘g‘ri import
 
 const TELEGRAM_BOT_TOKEN = "8412702421:AAGLCClgQnB69xfsmg8ScusCAtsMhXjgkzg";
-const CHAT_ID = "8419894563"; // bu yerga o'zingizning Telegram ID yozasiz
+const CHAT_ID = "8419894563";
 
 const Contact = () => {
     const { t } = useTranslation();
@@ -42,7 +43,6 @@ const Contact = () => {
             return;
         }
 
-        // 📨 Botga yuboriladigan formatlangan xabar
         const messageText = `
 <b>📝 Yangi kontakt formasi:</b>\n
 👤 <b>Ism:</b> ${form.fullName}
@@ -60,7 +60,7 @@ const Contact = () => {
                 body: JSON.stringify({
                     chat_id: CHAT_ID,
                     text: messageText,
-                    parse_mode: "HTML" // HTML formatda yuborish
+                    parse_mode: "HTML"
                 })
             });
 
@@ -92,6 +92,30 @@ const Contact = () => {
                     content="Get in touch with SamTour for personalized travel planning in Uzbekistan. We are here to help you create unforgettable memories."
                 />
             </Helmet>
+
+            {/* ✅ Ijtimoiy tarmoq ikonlari */}
+            <div className="social-icons">
+                <a href="https://instagram.com/__adhamjon18" target="_blank" rel="noreferrer">
+                    <FaInstagram />
+                </a>
+                <a href="https://wa.me/998917077291" target="_blank" rel="noreferrer">
+                    <FaWhatsapp />
+                </a>
+                <a href="https://facebook.com/adhamjon.sodiqov.2025/" target="_blank" rel="noreferrer">
+                    <FaFacebookF />
+                </a>
+                <a href="https://t.me/the_adhamjon" target="_blank" rel="noreferrer">
+                    <FaTelegramPlane />
+                </a>
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <FaEnvelope />
+                </a>
+            </div>
+
             <h1 className="contact-title">{t('contact.title')}</h1>
             <p className="contact-description">{t('contact.description')}</p>
 

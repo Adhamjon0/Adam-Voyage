@@ -1,0 +1,229 @@
+{
+    "header": {
+        "home": "Home",
+        "about": "Chi siamo",
+        "services": "Servizi",
+        "contact": "Contatti",
+        "gallery": "Galleria",
+        "menu": "Menu",
+        "main_navigation": "Navigazione principale",
+        "language_selector": "Seleziona la lingua"
+    },
+    "footer": {
+        "description": "Servizio di qualità, guide professionali e viaggi indimenticabili con noi!",
+        "quick_links": "Link rapidi",
+        "connect": "Contattaci",
+        "rights": "Tutti i diritti riservati."
+    },
+    "nav": {
+        "home": "Home",
+        "about": "Chi siamo",
+        "services": "Servizi",
+        "contact": "Contatti",
+        "gallery": "Galleria"
+    },
+    "home": {
+        "slides": [
+            {
+                "title": "Registan — La tua avventura inizia",
+                "subtitle": "Scopri la maestosa Piazza del Registan nel cuore di Samarcanda."
+            },
+            {
+                "title": "Bibikhonim — Eredità reale",
+                "subtitle": "Ammira la grandiosità di una delle moschee storiche più importanti dell'Asia centrale."
+            },
+            {
+                "title": "Amir Temur — Potere eterno",
+                "subtitle": "Visita il mausoleo di Gur-Emir e contempla la gloria di Amir Temur."
+            },
+            {
+                "title": "Monumento a Islom Karimov",
+                "subtitle": "Onora il primo presidente dell'Uzbekistan in un ambiente rispettoso."
+            },
+            {
+                "title": "Veduta della città di Samarcanda",
+                "subtitle": "Senti l'armonia tra le strade antiche e il fascino moderno."
+            },
+            {
+                "title": "Gioiello orientale",
+                "subtitle": "Scopri la bellezza senza tempo di questa città leggendaria."
+            },
+            {
+                "title": "Cucina uzbeka",
+                "subtitle": "Gusta le ricche tradizioni culinarie che si sono tramandate nei secoli."
+            }
+        ],
+        "get_in_touch": "Contattaci",
+        "learn_more": "Scopri di più",
+        "previous": "← Precedente",
+        "next": "Successivo →"
+    },
+    "about": {
+        "title": "Scopri Samarcanda e oltre",
+        "lead": "Viaggia al cuore dell'Uzbekistan — una città dove l'antica cultura e l'ospitalità moderna si fondono. SamTour offre viaggi sicuri e indimenticabili nelle aree storiche più importanti del paese.",
+        "mission_title": "La nostra missione",
+        "mission_desc": "Collegare i viaggiatori al vero spirito dell'Uzbekistan — dai mosaici blu di Samarcanda alle antiche vie di Bukhara e Khiva. Crediamo che ogni viaggio debba raccontare una storia e aiutiamo a creare la tua.",
+        "why_title": "Perché scegliere SamTour?",
+        "expertise_title": "Esperienza locale",
+        "expertise_desc": "Le nostre guide conoscono a fondo i luoghi più famosi dell'Uzbekistan e i loro segreti.",
+        "personalized_title": "Tour personalizzati",
+        "personalized_desc": "Ogni itinerario viene creato in base ai tuoi interessi, al tuo programma e ai tuoi sogni.",
+        "support_title": "Contatto rapido",
+        "support_desc": "Contattaci tramite Instagram, WhatsApp o Telegram — siamo sempre vicini.",
+        "explore_title": "Esplora le aree storiche",
+        "samarkand": {
+            "title": "Samarcanda",
+            "desc": "Il cuore della Via della Seta. Scopri Registan, Guri Amir e Shohi Zinda — ogni piastrella racconta la sua storia."
+        },
+        "tashkent": {
+            "title": "Tashkent",
+            "desc": "La capitale moderna dell'Uzbekistan — una combinazione di architettura contemporanea, mercati vivaci e profonde tradizioni."
+        },
+        "khiva": {
+            "title": "Khiva",
+            "desc": "Una città fortezza che sembra un museo vivente. Passeggia per Ichan Qal'a e sentirai il tempo fermarsi."
+        },
+        "bukhara": {
+            "title": "Bukhara",
+            "desc": "Centro spirituale e scientifico del mondo islamico — con antiche moschee, madrase e caravanserragli."
+        },
+        "shahrisabz": {
+            "title": "Shahrisabz",
+            "desc": "Città natale di Amir Temur.",
+            "more": "Il complesso di Oqsaroy — residenza estiva di Amir Temur, costruita intorno al 1380–1390. Shahrisabz è stato uno dei centri del potere del regno timuride."
+        },
+        "cta_title": "Inizia il tuo viaggio oggi",
+        "cta_desc": "Creeremo insieme un'esperienza che ricorderai per tutta la vita. Scopri lo spirito antico dell'Uzbekistan con noi.",
+        "contact_button": "Contattaci"
+    },
+    "service": {
+        "intro": {
+            "title": "I nostri servizi",
+            "lead": "Rendiamo il tuo viaggio piacevole e confortevole!"
+        },
+        "section_title": "Perché scegliere i nostri servizi?",
+        "services": [
+            {
+                "title": "Servizi di trasporto",
+                "desc": "Rendi il tuo viaggio piacevole con servizi di trasporto comodi e sicuri."
+            },
+            {
+                "title": "Prenotazioni hotel",
+                "desc": "Troviamo per te i migliori hotel a prezzi convenienti."
+            },
+            {
+                "title": "Guide turistiche",
+                "desc": "Le nostre guide qualificate ti presenteranno i luoghi storici."
+            },
+            {
+                "title": "Ristorazione",
+                "desc": "Gusta piatti nazionali in ricchi banchetti."
+            },
+            {
+                "title": "Viaggi aziendali",
+                "desc": "Servizi professionali per gruppi e eventi speciali."
+            },
+            {
+                "title": "Visti e documenti",
+                "desc": "Assistiamo nella rapida e affidabile registrazione dei documenti di viaggio."
+            },
+            {
+                "title": "Assicurazione",
+                "desc": "Offriamo assicurazioni per viaggiare con tranquillità."
+            },
+            {
+                "title": "Programmi culturali",
+                "desc": "Organizziamo la partecipazione a concerti, teatri e festival."
+            }
+        ],
+        "regions_title": "Regioni storiche",
+        "regions": [
+            {
+                "id": "samarkand",
+                "title": "Samarcanda",
+                "desc": "Antica città situata sulla Grande Via della Seta.",
+                "more": "Ulugbek (1394–1449) – grande astronomo e matematico che costruì l'osservatorio a Samarcanda tra il 1420 e il 1428. Il mausoleo Guri Amir – luogo di sepoltura di Amir Temur (1336–1405) e della sua famiglia, costruito nel 1404–1405. Il complesso Shohi Zinda – necropoli dei secoli XIII–XV. La moschea Bibikhonim – costruita nel 1404–1405 dalla moglie di Amir Temur. Samarcanda attrae i visitatori per i suoi monumenti e il suo patrimonio culturale."
+            },
+            {
+                "id": "bukhara",
+                "title": "Bukhara",
+                "desc": "Centro del sapere nel mondo islamico.",
+                "more": "La Torre Kalon – costruita nel 1127, simbolo di Bukhara. L'Ark – residenza degli emiri di Bukhara e monumento storico. Imam Bukhari (810–870) – grande studioso degli hadith. Bukhara ospita numerose madrase e istituzioni che hanno contribuito allo sviluppo della scienza islamica."
+            },
+            {
+                "id": "khiva",
+                "title": "Khiva",
+                "desc": "Antica città-fortezza.",
+                "more": "Ichan-Qal'a – complesso storico dei secoli XV–XIX, famoso per le sue mura. Al-Khwarizmi (780–850) – fondatore dell'algebra, associato alla regione; Abu Raihan al-Biruni (973–1050) – studioso di astronomia, matematica e scienze naturali che visse nella regione. Khiva è stata uno dei centri scientifici storici dell'Asia Centrale."
+            },
+            {
+                "id": "tashkent",
+                "title": "Tashkent",
+                "desc": "Capitale dell'Uzbekistan, fusione di storia e modernità.",
+                "more": "Il complesso Hazrati Imam – centro dell'apprendimento islamico che conserva manoscritti del Corano. Il mercato Chorsu – antico centro commerciale e cuore di Tashkent. La Piazza dell'Indipendenza – simbolo dell'indipendenza dell'Uzbekistan. Tashkent ospita numerosi musei, teatri e centri culturali."
+            },
+            {
+                "id": "shahrisabz",
+                "title": "Shahrisabz",
+                "desc": "Città natale di Amir Temur.",
+                "more": "Il complesso Oqsaroy – residenza estiva di Amir Temur, costruito nel 1380–1390. Shahrisabz fu uno dei centri del potere del regno timuride."
+            },
+            {
+                "id": "andijan",
+                "title": "Andijan",
+                "desc": "La porta orientale della valle di Fergana.",
+                "more": "Zahiriddin Muhammad Babur (1483–1530) – fondatore della dinastia baburide, nato ad Andijan. Il \"Baburnama\" narra la sua vita e il suo tempo. Andijan è ricca di patrimonio storico e culturale."
+            },
+            {
+                "id": "namangan",
+                "title": "Namangan",
+                "desc": "Unione di splendidi paesaggi e monumenti storici.",
+                "more": "Famosa per i monumenti legati al Khanato di Kokand. Namangan ha molti siti storici e centri culturali."
+            },
+            {
+                "id": "fergana",
+                "title": "Fergana",
+                "desc": "La porta orientale dell'Uzbekistan.",
+                "more": "Conosciuta come centro culturale della valle di Fergana. Figure come Al-Khwarizmi e al-Biruni sono storicamente legate alla regione. La città è ricca di monumenti storici."
+            },
+            {
+                "id": "navoi",
+                "title": "Navoiy",
+                "desc": "Centro industriale e culturale.",
+                "more": "Karmana – città storica; Nurata – fortezza associata ad Alessandro Magno, IV secolo a.C. Navoiy prende il nome dal grande poeta Alisher Navoiy (1441–1501)."
+            },
+            {
+                "id": "nukus",
+                "title": "Nukus",
+                "desc": "Capitale del Karakalpakstan; famosa per il Museo Savitskiy.",
+                "more": "Il Museo Savitskiy custodisce una collezione unica, con opere d'arte sovietiche e d'avanguardia. Nukus è un importante centro culturale."
+            }
+        ],
+        "buttons": {
+            "more": "Altro",
+            "close": "Chiudi"
+        }
+    },
+    "gallery": {
+        "title": "Galleria"
+    },
+    "contact": {
+        "title": "Contattaci",
+        "description": "Siamo pronti ad aiutarti a pianificare un viaggio indimenticabile in Uzbekistan. Compila il modulo seguente e ti contatteremo al più presto.",
+        "form": {
+            "full_name": "Nome completo",
+            "country": "Da dove vieni?",
+            "phone": "Numero di telefono",
+            "email": "Email",
+            "date": "Data del viaggio",
+            "message": "Messaggio",
+            "message_placeholder": "Raccontaci i tuoi desideri di viaggio...",
+            "submit": "Invia messaggio"
+        },
+        "status": {
+            "success": "Il tuo messaggio è stato inviato con successo!",
+            "error": "Per favore, completa tutti i campi."
+        },
+        "errorField": "Questo campo è obbligatorio"
+    }
+}

@@ -15,6 +15,8 @@ const LANGUAGES = [
     { code: "zh", label: "中文" },
     { code: "ko", label: "한국어" },
     { code: "de", label: "Deutsch" },
+    { code: "es", label: "Español" },
+    { code: "iti", label: "Italiano" },
 ];
 
 export default function Header() {
