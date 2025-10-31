@@ -49,12 +49,7 @@ export default function Footer() {
                         <a href="https://t.me/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer">
                             <FaTelegramPlane />
                         </a>
-                        <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
-                            className="social-icon"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="mailto:sodiqovadhamjon0@gmail.com" className="social-icon">
                             <FaEnvelope />
                         </a>
                     </div>
