@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import { FaInstagram, FaWhatsapp, FaFacebookF, FaTelegramPlane, FaEnvelope } from 'react-icons/fa'; // ✅ to‘g‘ri import
+import { FaInstagram, FaWhatsapp, FaFacebookF, FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
 
 const TELEGRAM_BOT_TOKEN = "8412702421:AAGLCClgQnB69xfsmg8ScusCAtsMhXjgkzg";
 const CHAT_ID = "8419894563";
@@ -93,7 +93,6 @@ const Contact = () => {
                 />
             </Helmet>
 
-            {/* ✅ Ijtimoiy tarmoq ikonlari */}
             <div className="social-icons">
                 <a href="https://instagram.com/__adhamjon18" target="_blank" rel="noreferrer">
                     <FaInstagram />
@@ -101,13 +100,18 @@ const Contact = () => {
                 <a href="https://wa.me/998917077291" target="_blank" rel="noreferrer">
                     <FaWhatsapp />
                 </a>
-                <a href="https://facebook.com/adhamjon.sodiqov.2025/" target="_blank" rel="noreferrer">
+                <a href="https://www.facebook.com/gayrat.qilichev.9" target="_blank" rel="noreferrer">
                     <FaFacebookF />
                 </a>
                 <a href="https://t.me/the_adhamjon" target="_blank" rel="noreferrer">
                     <FaTelegramPlane />
                 </a>
-                <a href="mailto:sodiqovadhamjon0@gmail.com" className="social-icon">
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'inline-block', cursor: 'pointer' }}
+                >
                     <FaEnvelope />
                 </a>
             </div>

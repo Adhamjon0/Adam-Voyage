@@ -40,7 +40,7 @@ export default function Footer() {
                         <a href="https://instagram.com/__adhamjon18" className="social-icon" target="_blank" rel="noopener noreferrer">
                             <FaInstagram />
                         </a>
-                        <a href="https://www.facebook.com/adhamjon.sodiqov.2025/" className="social-icon" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com/gayrat.qilichev.9 " className="social-icon" target="_blank" rel="noopener noreferrer">
                             <FaFacebookF />
                         </a>
                         <a href="https://wa.me/998917077291" className="social-icon" target="_blank" rel="noopener noreferrer">
@@ -49,7 +49,12 @@ export default function Footer() {
                         <a href="https://t.me/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer">
                             <FaTelegramPlane />
                         </a>
-                        <a href="mailto:sodiqovadhamjon0@gmail.com" className="social-icon">
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ cursor: 'pointer' }}
+                            className="social-icon">
                             <FaEnvelope />
                         </a>
                     </div>

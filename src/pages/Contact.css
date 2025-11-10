@@ -2,9 +2,7 @@
 
 :root {
     --primary-color: #9E7E38;
-    /* Oltinrang */
     --bg-color: #fdfaf6;
-    /* Tarixiy oq rang */
     --text-color: #3b2f2f;
     --input-bg: #fff;
     --border-color: #d6c7aa;
@@ -109,7 +107,7 @@ textarea {
     display: block;
 }
 
-/* === Ijtimoiy tarmoq ikonchalari === */
+/* Ijtimoiy tarmoq ikonchalari */
 .social-icons {
     display: flex;
     justify-content: center;
