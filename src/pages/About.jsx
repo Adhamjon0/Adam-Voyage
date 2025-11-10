@@ -35,7 +35,7 @@ const About = () => {
             </Helmet>
 
             {/* Intro */}
-            <section className="about-intro">
+            <section className="about-intro fade-in">
                 <div className="about-container">
                     <h1 className="about-title">{t("about.title")}</h1>
                     <p className="about-lead">{t("about.lead")}</p>
@@ -55,27 +55,17 @@ const About = () => {
                 <div className="about-container">
                     <h2 className="about-section-title">{t("about.why_title")}</h2>
                     <div className="about-cards">
-                        <div className="about-card">
-                            <img src={img2} alt="Shah-i-Zinda" className="about-card-img" />
-                            <div className="about-card-body">
-                                <h3>{t("about.expertise_title")}</h3>
-                                <p>{t("about.expertise_desc")}</p>
+                        {[{ img: img2, title: t("about.expertise_title"), desc: t("about.expertise_desc") },
+                        { img: img3, title: t("about.personalized_title"), desc: t("about.personalized_desc") },
+                        { img: img5, title: t("about.support_title"), desc: t("about.support_desc") }].map((card, i) => (
+                            <div className="about-card" key={i}>
+                                <img src={card.img} alt={card.title} className="about-card-img" />
+                                <div className="about-card-body">
+                                    <h3>{card.title}</h3>
+                                    <p>{card.desc}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="about-card">
-                            <img src={img3} alt="Khiva Walls" className="about-card-img" />
-                            <div className="about-card-body">
-                                <h3>{t("about.personalized_title")}</h3>
-                                <p>{t("about.personalized_desc")}</p>
-                            </div>
-                        </div>
-                        <div className="about-card">
-                            <img src={img5} alt="Amir Temur Mausoleum" className="about-card-img" />
-                            <div className="about-card-body">
-                                <h3>{t("about.support_title")}</h3>
-                                <p>{t("about.support_desc")}</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -105,13 +95,8 @@ const About = () => {
             {/* Modal */}
             {selected && (
                 <div className="about-modal" onClick={() => setSelected(null)}>
-                    <div
-                        className="about-modal-content"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button className="about-modal-close" onClick={() => setSelected(null)}>
-                            ✕
-                        </button>
+                    <div className="about-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="about-modal-close" onClick={() => setSelected(null)}>✕</button>
                         <img src={selected.img} alt={selected.title} className="about-modal-img" />
                         <h3>{selected.title}</h3>
                         <p>{selected.desc}</p>
@@ -119,14 +104,12 @@ const About = () => {
                 </div>
             )}
 
-            {/* Call to Action */}
+            {/* CTA */}
             <section className="about-cta">
                 <div className="about-container">
                     <h2 className="about-cta-title">{t("about.cta_title")}</h2>
                     <p className="about-cta-desc">{t("about.cta_desc")}</p>
-                    <Link to="/contact" className="about-btn">
-                        {t("about.contact_button")}
-                    </Link>
+                    <Link to="/contact" className="about-btn">{t("about.contact_button")}</Link>
                 </div>
             </section>
         </main>

@@ -1,33 +1,39 @@
 :root {
-    --primary: #d4af37;
-    --bg: #fdfaf6;
-    --text: #1e1e1e;
-    --white: #fff;
-    --muted: #6b7280;
-    --card: #ffffff;
-    --section: #f3efe8;
+    --accent: #0ff;
+    /* neon moviy */
+    --accent-dark: #3bf;
+    /* hover neon */
+    --bg-dark: #0b0b1a;
+    /* qorong‘i fon */
+    --text-light: #ffffff;
+    /* asosiy matn */
+    --text-muted: #a0f0ff;
+    /* yordamchi matn */
+    --card-bg: #1a1a28;
     --radius: 14px;
-    --shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    --shadow-strong: 0 20px 60px rgba(0, 0, 0, .25);
-    --font-serif: 'Merriweather', serif;
-    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.35);
+    --font-serif: "Merriweather", serif;
+    --font-sans: "Inter", sans-serif;
+    --transition: 0.3s ease;
 }
 
 /* Page */
 .service-page {
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg-dark);
+    color: var(--text-light);
     font-family: var(--font-sans);
     line-height: 1.6;
 }
 
+/* Container */
 .service-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 1rem;
 }
 
-/* Intro (fon rasm saqlandi) */
+/* Intro */
 .service-intro {
     height: 60vh;
     background: url('../photos/registon.jpg') center/cover no-repeat;
@@ -36,15 +42,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
-    overflow: hidden;
+    color: var(--text-light);
 }
 
 .service-intro::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, .45);
+    background: rgba(0, 0, 0, 0.55);
 }
 
 .service-intro .service-container {
@@ -56,11 +61,14 @@
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-family: var(--font-serif);
     margin: 0 0 .5rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .service-lead {
     font-size: 1.1rem;
-    opacity: .95;
+    color: var(--text-light);
 }
 
 /* Section title */
@@ -69,7 +77,7 @@
     font-size: clamp(1.4rem, 2.4vw, 2rem);
     font-family: var(--font-serif);
     margin: 2.25rem 0 1.25rem;
-    color: var(--primary);
+    color: var(--accent);
 }
 
 /* Service cards */
@@ -80,31 +88,32 @@
 }
 
 .service-card {
-    background: var(--card);
+    background: var(--card-bg);
     box-shadow: var(--shadow);
     border-radius: var(--radius);
     padding: 1.25rem;
-    transition: transform .25s ease, box-shadow .25s ease;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0, 255, 255, 0.3);
 }
 
 .service-card__title {
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     margin: 0 0 .35rem;
+    color: var(--text-light);
 }
 
 .service-card__desc {
     margin: 0;
-    color: #3a3a3a;
     font-size: .95rem;
+    color: var(--text-muted);
 }
 
-/* Regions grid (5 x 2 katta ekranda) */
+/* Regions grid */
 .region-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -132,25 +141,22 @@
 .region-card {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    border-radius: 16px;
-    background: var(--card);
+    border-radius: var(--radius);
+    background: var(--card-bg);
     box-shadow: var(--shadow);
-    border: 1px solid rgba(0, 0, 0, .06);
     overflow: hidden;
     cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .region-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, .12);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(0, 255, 255, 0.3);
 }
 
 .region-thumb {
     width: 100%;
     aspect-ratio: 16/11;
-    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
     overflow: hidden;
 }
 
@@ -166,37 +172,33 @@
 }
 
 .region-title {
-    margin: 0 0 .25rem;
     font-weight: 700;
     font-size: 1rem;
+    margin: 0 0 .25rem;
+    color: var(--text-light);
 }
 
 .region-desc {
-    margin: 0;
     font-size: .9rem;
-    color: #4b5563;
+    color: var(--text-muted);
+    margin: 0;
 }
 
-/* ===== Fullscreen MODAL ===== */
+/* Modal */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     align-items: stretch;
     justify-content: center;
     z-index: 1000;
 }
 
-/* Butun ekran bo‘ylab, fon rasm bilan */
 .modal.fullscreen {
     position: relative;
     width: 100%;
     height: 100%;
-    max-width: none;
-    max-height: none;
-    border-radius: 0;
-    box-shadow: var(--shadow-strong);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -204,83 +206,67 @@
     align-items: center;
     justify-content: center;
     padding: 3.5rem 1rem;
-    /* modal ichki bo‘shliq */
 }
 
-/* Ichki kontent — markazda karta */
 .modal-content {
     width: min(860px, 92vw);
-    background: rgba(255, 255, 255, .06);
-    border: 1px solid rgba(255, 255, 255, .18);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(26, 26, 40, 0.8);
     border-radius: 20px;
     padding: 1.25rem 1.25rem 1.5rem;
-    color: var(--white);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-/* Matn — oq rang, kontrast kuchli */
 .modal-title {
     font-size: clamp(1.6rem, 3.6vw, 2.4rem);
-    line-height: 1.2;
     margin: .25rem 0 .5rem;
-    color: #fff;
+    color: var(--accent);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
     font-family: var(--font-serif);
-    text-shadow: 0 2px 16px rgba(0, 0, 0, .35);
 }
 
-.modal-sub {
-    margin: 0 0 .75rem;
-    color: #f5f7fa;
-    font-size: 1.05rem;
-}
-
+.modal-sub,
 .modal-more {
-    margin: .25rem 0 1rem;
-    color: #ffffff;
-    opacity: .95;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: .5rem;
 }
 
-/* Tugmalar */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: .5rem;
     padding: .7rem 1.2rem;
-    border-radius: 12px;
+    border-radius: var(--radius);
     border: none;
     cursor: pointer;
     font-weight: 700;
-    transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
 .modal-btn {
-    background: var(--primary);
-    color: #111;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, .25);
+    background: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: 0 10px 22px rgba(0, 255, 255, 0.25);
     margin: .25rem .4rem;
 }
 
 .modal-btn:hover {
     transform: translateY(-1px);
+    background: var(--accent-dark);
 }
 
 .modal-btn.outline {
     background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255, 255, 255, .6);
-    box-shadow: none;
+    color: var(--text-light);
+    border: 1.5px solid rgba(0, 255, 255, 0.6);
 }
 
-/* Yopish tugmasi — ekranning yuqori o‘ng burchagida */
+/* Close button */
 .modal-close {
     position: absolute;
     top: 16px;
@@ -288,22 +274,20 @@
     width: 42px;
     height: 42px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, .5);
-    background: rgba(0, 0, 0, .35);
+    background: rgba(0, 0, 0, 0.35);
     color: #fff;
     font-size: 20px;
     display: grid;
     place-items: center;
     cursor: pointer;
-    transition: background .2s ease, transform .15s ease;
+    transition: background var(--transition);
 }
 
 .modal-close:hover {
-    background: rgba(0, 0, 0, .55);
-    transform: scale(1.04);
+    background: rgba(0, 0, 0, 0.55);
 }
 
-/* ===== Responsiv — ayniqsa 430px uchun ===== */
+/* Responsive */
 @media (max-width: 768px) {
     .service-intro {
         height: 50vh;
@@ -319,8 +303,6 @@
 }
 
 @media (max-width: 430px) {
-
-    /* Modal ichida column tartib — matn oson o‘qilsin */
     .modal.fullscreen {
         padding: 3.25rem .75rem;
     }
@@ -334,12 +316,9 @@
         font-size: 1.6rem;
     }
 
-    .modal-sub {
-        font-size: 1rem;
-    }
-
+    .modal-sub,
     .modal-more {
-        font-size: .96rem;
+        font-size: 1rem;
     }
 
     .region-grid {

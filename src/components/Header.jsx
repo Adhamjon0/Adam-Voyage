@@ -74,29 +74,30 @@ export default function Header() {
                 </div>
 
                 <button
-                    className="hamburger"
+                    className={`hamburger ${menuOpen ? "active" : ""}`}
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Menu"
                 >
-                    {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+                    {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
                 </button>
             </div>
 
-            {/* Overlay butun sahifaga */}
-            {menuOpen && <div className="overlay"></div>}
+            {/* Overlay */}
+            <div className={`overlay ${menuOpen ? "show" : ""}`}></div>
 
             {/* Mobile menu */}
             <div ref={menuRef} className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-                <NavLink to="/" end onClick={closeMenu}>{t("nav.home")}</NavLink>
-                <NavLink to="/about" onClick={closeMenu}>{t("nav.about")}</NavLink>
-                <NavLink to="/services" onClick={closeMenu}>{t("nav.services")}</NavLink>
-                <NavLink to="/gallery" onClick={closeMenu}>{t("nav.gallery")}</NavLink>
+                <NavLink to="/" end onClick={closeMenu} className="mobile-link">{t("nav.home")}</NavLink>
+                <NavLink to="/about" onClick={closeMenu} className="mobile-link">{t("nav.about")}</NavLink>
+                <NavLink to="/services" onClick={closeMenu} className="mobile-link">{t("nav.services")}</NavLink>
+                <NavLink to="/gallery" onClick={closeMenu} className="mobile-link">{t("nav.gallery")}</NavLink>
                 <NavLink to="/contact" onClick={closeMenu} className="btn-contact">
                     <FiPhone /> {t("nav.contact")}
                 </NavLink>
                 <select
                     onChange={handleLangChange}
                     value={localStorage.getItem("i18nextLng") || "en"}
+                    className="mobile-select"
                 >
                     {LANGUAGES.map((l) => (
                         <option key={l.code} value={l.code}>{l.label}</option>

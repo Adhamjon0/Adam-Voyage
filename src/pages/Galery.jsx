@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Galery.css';
 import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next'; // 🔥 Shu import kerak
+import { useTranslation } from 'react-i18next';
 
 import bibixonim from '../photos/bibixonim.jpg';
 import buxoroArk from '../photos/buxoroArk.jpg';
@@ -22,7 +22,7 @@ import observatoria from '../photos/observatoria.jpg';
 const images = [
     { id: 1, name: 'Bibixonim', image: bibixonim },
     { id: 2, name: 'Ark of Bukhara', image: buxoroArk },
-    { id: 3, name: 'Samarcand city ', image: city },
+    { id: 3, name: 'Samarcand city', image: city },
     { id: 4, name: 'Amir Temur', image: Temur },
     { id: 5, name: 'Osh palov', image: osh },
     { id: 6, name: 'Tashkent', image: tosh },
@@ -39,7 +39,7 @@ const images = [
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-    const { t } = useTranslation(); // 🔥 t funksiyasini chaqirdik
+    const { t } = useTranslation();
 
     const openModal = (image) => setSelectedImage(image);
     const closeModal = () => setSelectedImage(null);
@@ -54,7 +54,6 @@ const Gallery = () => {
                 />
             </Helmet>
 
-            {/* Tarjima qilinadigan sarlavha */}
             <h2 className="gallery-title">{t("gallery.title")}</h2>
 
             <div className="gallery-grid">
@@ -74,7 +73,7 @@ const Gallery = () => {
 
             {selectedImage && (
                 <div className="modal" onClick={closeModal}>
-                    <span className="close">&times;</span>
+                    <span className="modal-close">&times;</span>
                     <img src={selectedImage} alt="Selected" className="modal-content" />
                 </div>
             )}

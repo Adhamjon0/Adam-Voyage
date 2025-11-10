@@ -14,7 +14,6 @@ import far_ser from "../photos/far_ser.jpg";
 import nav_ser from "../photos/nav_ser.jpg";
 import nuk_ser from "../photos/nuk_ser.jpg";
 
-// Viloyatlar uchun rasm mapping (faqat ID ishlatiladi)
 const regionImages = {
     samarkand: sam_ser,
     bukhara: bux_ser,
@@ -121,8 +120,8 @@ const Service = () => {
                         onClick={(e) => e.stopPropagation()}
                         style={{
                             backgroundImage: selectedRegion.img
-                                ? `linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.8)), url(${selectedRegion.img})`
-                                : "linear-gradient(180deg, #1b1b1b, #000)"
+                                ? `linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)), url(${selectedRegion.img})`
+                                : "linear-gradient(180deg, #0b0b1a, #000)"
                         }}
                     >
                         <button
@@ -164,4 +163,4 @@ const Service = () => {
     );
 };
 
-            export default Service;
+export default Service;

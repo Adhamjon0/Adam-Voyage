@@ -1,21 +1,36 @@
 :root {
-    --primary: #d4af37;
-    --bg: #fdfaf6;
-    --text-dark: #1e1e1e;
-    --text-light: #ffffff;
-    --section-bg: #f3efe8;
-    --card-bg: #ffffff;
+    --accent: #0ff;          
+    --accent-dark: #3bf;     
+    --text-light: #ffffff;    
+    --text-muted: #ffffff;    /* yordamchi matnni ham yorqin oq qilamiz */
+    --bg-dark: #0b0b1a;       
+    --card-bg: #1a1a28;       
     --radius: 12px;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow: 0 6px 20px rgba(0, 255, 255, 0.3); 
     --font-serif: "Merriweather", serif;
     --font-sans: "Inter", sans-serif;
+    --transition: 0.3s ease;
 }
 
 /* General */
 .about-page {
-    background: var(--bg);
-    color: var(--text-dark);
+    background: var(--bg-dark);
+    color: var(--text-light);
     font-family: var(--font-sans);
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-container {
@@ -26,39 +41,40 @@
 
 /* Intro */
 .about-intro {
-    height: 100vh;
+    height: 90vh;
     background: url("../photos/registon.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-light);
     position: relative;
+    color: var(--text-light);
 }
 
 .about-intro::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.about-intro .about-container {
-    position: relative;
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.35); 
 }
 
 .about-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-family: var(--font-serif);
     margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 16px rgba(0, 255, 255, 0.8); 
 }
 
 .about-lead {
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 500;
     max-width: 700px;
     margin: 0 auto;
+    /* color: var(--text-light); */
+    text-shadow: 0 2px 8px rgba(0, 255, 255, 0.6);
 }
 
 /* Sections */
@@ -66,8 +82,9 @@
     font-size: 2rem;
     text-align: center;
     font-family: var(--font-serif);
-    color: var(--primary);
+    color: var(--accent);
     margin: 2rem 0 1rem;
+    text-shadow: 0 2px 6px rgba(0, 255, 255, 0.3);
 }
 
 .about-section-desc {
@@ -76,9 +93,10 @@
     max-width: 800px;
     margin: 0 auto 2rem;
     line-height: 1.6;
+    color: var(--text-light); /* yorqin oq */
 }
 
-/* Values Cards */
+/* Cards */
 .about-cards {
     display: flex;
     flex-wrap: wrap;
@@ -92,11 +110,13 @@
     box-shadow: var(--shadow);
     overflow: hidden;
     width: 300px;
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
 }
 
 .about-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6);
 }
 
 .about-card-img {
@@ -114,9 +134,15 @@
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
     font-weight: 600;
+    color: var(--text-light);
+    text-shadow: 0 1px 6px rgba(0, 255, 255, 0.4);
 }
 
-/* Regions Grid */
+.about-card-body p {
+    color: var(--text-light); /* kichik matnni yorqin oq qilamiz */
+}
+
+/* Regions */
 .about-regions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -129,12 +155,13 @@
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
-    transition: transform 0.3s ease;
     cursor: pointer;
+    transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
 }
 
 .about-region-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
 }
 
 .about-region-img {
@@ -148,26 +175,34 @@
     text-align: center;
 }
 
+.about-region-body h3,
+.about-region-body p {
+    color: var(--text-light); /* yorqin oq */
+    text-shadow: 0 1px 6px rgba(0, 255, 255, 0.4);
+}
+
 /* Modal */
 .about-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    animation: fadeUp 0.4s ease;
 }
 
 .about-modal-content {
     background: var(--card-bg);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
     padding: 1.5rem;
     max-width: 600px;
     width: 90%;
     text-align: center;
     position: relative;
+    color: var(--text-light);
 }
 
 .about-modal-close {
@@ -178,6 +213,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--accent);
 }
 
 .about-modal-img {
@@ -190,7 +226,7 @@
 
 /* CTA */
 .about-cta {
-    background: var(--section-bg);
+    background: var(--bg-dark);
     text-align: center;
     padding: 3rem 1rem;
     border-radius: var(--radius);
@@ -201,25 +237,29 @@
     font-size: 2rem;
     font-family: var(--font-serif);
     margin-bottom: 1rem;
+    color: var(--accent);
+    text-shadow: 0 2px 10px rgba(0, 255, 255, 0.5);
 }
 
 .about-cta-desc {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    color: var(--text-light); /* yorqin oq */
 }
 
 .about-btn {
-    background: var(--primary);
-    color: var(--text-light);
+    background: var(--accent);
+    color: black;
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
     font-size: 1rem;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: var(--transition);
 }
 
 .about-btn:hover {
-    background: #b88b2d;
+    background: var(--accent-dark);
+    transform: scale(1.05);
 }
 
 /* Responsive */
@@ -230,6 +270,10 @@
 
     .about-lead {
         font-size: 1rem;
+    }
+
+    .about-section-title {
+        font-size: 1.6rem;
     }
 
     .about-cta-title {
