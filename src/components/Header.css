@@ -194,6 +194,7 @@
 
     .hamburger {
         display: block;
+        color: var(--accent);
     }
 }
 

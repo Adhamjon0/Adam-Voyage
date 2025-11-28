@@ -146,13 +146,10 @@
         padding-bottom: 0;
         border-bottom: none;
         max-width: 300px;
-        margin: 0 auto;
     }
 
     .footer-section {
         min-width: 100%;
-        margin-bottom: 0.3rem;
-        padding: 0 5px;
     }
 
     .footer-links {
@@ -160,7 +157,6 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 4px;
-        margin: 0.2rem 0 0 0;
     }
 
     .footer-link {
@@ -182,17 +178,14 @@
 
     .footer-title {
         font-size: 1.4rem;
-        margin-bottom: 0.3rem;
     }
 
     .footer-text {
         font-size: 1rem;
         line-height: 1.3;
-        margin-bottom: 0;
     }
 
     .footer-bottom {
         font-size: 0.9rem;
-        padding-top: 0.3rem;
     }
 }
