@@ -107,10 +107,11 @@ const Contact = () => {
                     <FaTelegramPlane />
                 </a>
                 <a
-                    href="mailto:sodiqovadhamjon0@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                >
+                    style={{ cursor: 'pointer' }}
+                    className="social-icon1">
                     <FaEnvelope />
                 </a>
             </div>

@@ -210,7 +210,7 @@
         "title": "Nous contacter",
         "description": "Planifions ensemble votre voyage inoubliable en Ouzbékistan. Remplissez le formulaire et nous vous répondrons rapidement.",
         "form": {
-            "full_name": "Nom complet",
+            "fullName": "Nom complet",
             "country": "Pays",
             "phone": "Numéro de téléphone",
             "email": "E-mail",

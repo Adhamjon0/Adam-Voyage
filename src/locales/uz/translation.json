@@ -211,7 +211,7 @@
         "title": "Biz bilan bog‘laning",
         "description": "O‘zbekiston bo‘ylab unutilmas sayohatingizni rejalashtirishda sizga yordam berishga tayyormiz. Quyidagi shaklni to‘ldiring — tez orada siz bilan bog‘lanamiz.",
         "form": {
-            "full_name": "To‘liq ism",
+            "fullName": "To‘liq ism",
             "country": "Qayerdansiz?",
             "phone": "Telefon raqam",
             "email": "Elektron pochta manzili",

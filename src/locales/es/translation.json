@@ -210,7 +210,7 @@
         "title": "Ponte en contacto",
         "description": "Estamos listos para ayudarte a planificar un viaje inolvidable por Uzbekistán. Completa el siguiente formulario y nos pondremos en contacto contigo pronto.",
         "form": {
-            "full_name": "Nombre completo",
+            "fullName": "Nombre completo",
             "country": "¿De dónde eres?",
             "phone": "Número de teléfono",
             "email": "Correo electrónico",

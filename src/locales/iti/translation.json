@@ -211,7 +211,7 @@
         "title": "Contattaci",
         "description": "Siamo pronti ad aiutarti a pianificare un viaggio indimenticabile in Uzbekistan. Compila il modulo seguente e ti contatteremo al più presto.",
         "form": {
-            "full_name": "Nome completo",
+            "fullName": "Nome completo",
             "country": "Da dove vieni?",
             "phone": "Numero di telefono",
             "email": "Email",
