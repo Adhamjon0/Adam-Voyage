@@ -1,0 +1,78 @@
+.city-page {
+    background: var(--bg-soft);
+    padding: 4rem 1.5rem;
+}
+
+.city-wrapper {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HERO */
+.city-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.city-hero h1 {
+    font-size: 3rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.city-hero p {
+    max-width: 800px;
+    margin: auto;
+    color: #C9A227;
+    line-height: 1.7;
+}
+
+/* SECTION */
+.city-section {
+    background: var(--bg-light);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.city-section h2 {
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+}
+
+.city-section p {
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+/* HIGHLIGHT (TEMURIY DAVR) */
+.city-section.highlight {
+    border-left: 6px solid var(--orange);
+}
+
+/* IMAGE PLACEHOLDER */
+.image-placeholder {
+    margin-top: 1.5rem;
+    height: 220px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #e5ecf5, #f8fafc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .city-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .city-section {
+        padding: 1.8rem;
+    }
+}

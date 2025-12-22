@@ -1,38 +1,37 @@
 :root {
-    --accent: #22d3ee;
-    /* Moviy gradient boshlanish */
-    --accent-dark: #3b82f6;
-    /* Moviy gradient tugash */
+    --gold: #f6c453;
+    --gold-strong: #eab308;
+    --gold-soft: rgba(246, 196, 83, 0.3);
+
     --text-light: #ffffff;
     --text-muted: rgba(255, 255, 255, 0.85);
-    --bg-dark: #0f0f14;
-    --radius: 8px;
-    --transition: 0.4s ease;
-    font-family: 'Inter', sans-serif;
+
+    --radius: 18px;
+    --transition: 0.5s cubic-bezier(.4, 0, .2, 1);
 }
 
-/* Hero section */
+/* HERO */
 .home-hero {
     position: relative;
-    min-height: 95vh;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    min-height: 100vh;
     overflow: hidden;
-    padding: 1rem;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
+/* BACKGROUND IMAGE */
 .home-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.6);
+    background-repeat: no-repeat;
+
+    filter: brightness(0.92) contrast(1.08) saturate(1.1);
+    transition: opacity 1s ease;
     z-index: 0;
-    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in {
@@ -43,132 +42,126 @@
     opacity: 0;
 }
 
+/* OVERLAY – HOMEGA XOS */
 .home-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(15, 15, 20, 0.8), rgba(0, 0, 0, 0.3));
     z-index: 1;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.05));
 }
 
+/* CONTENT */
 .home-content {
     position: relative;
     z-index: 2;
     max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 1s forwards;
+    width: 100%;
+    padding: 2rem;
+    margin-bottom: 10vh;
+
+    text-align: center;
+    animation: fadeUp 1.2s ease forwards;
 }
 
-@keyframes fadeSlideUp {
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Title and subtitle */
+/* TITLE */
 .home-title {
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: bold;
-    line-height: 1.1;
-    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: titleGlow 2s ease-in-out infinite alternate;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 800;
+    color: var(--text-light);
+    line-height: 1.15;
+    text-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
-@keyframes titleGlow {
-    from {
-        filter: drop-shadow(0 0 2px var(--accent));
-    }
-
-    to {
-        filter: drop-shadow(0 0 12px var(--accent-dark));
-    }
+.home-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: var(--gold);
+    margin: 1.2rem auto;
+    border-radius: 2px;
 }
 
+/* SUBTITLE */
 .home-subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: 1.1rem;
     color: var(--text-muted);
-    max-width: 700px;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* Buttons */
+/* ACTIONS */
 .home-actions {
+    margin-top: 2.5rem;
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
 }
 
+/* BUTTONS */
 .home-btn {
-    padding: 0.7rem 1.5rem;
+    padding: 0.9rem 2.2rem;
     border-radius: var(--radius);
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
     transition: var(--transition);
-    border: 1px solid transparent;
 }
 
-.home-btn-primary {
-    background: var(--accent);
-    color: #0f0f14;
+/* PRIMARY */
+.home-btn.primary {
+    background: var(--gold);
+    color: #1f2933;
 }
 
-.home-btn-primary:hover {
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.4);
+.home-btn.primary:hover {
+    background: var(--gold-strong);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(246, 196, 83, 0.45);
 }
 
-.home-btn-secondary {
-    border: 1px solid var(--accent);
-    color: var(--accent);
+/* OUTLINE */
+.home-btn.outline {
+    border: 2px solid var(--gold);
+    color: var(--gold);
     background: transparent;
 }
 
-.home-btn-secondary:hover {
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    color: #0f0f14;
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.4);
+.home-btn.outline:hover {
+    background: var(--gold-soft);
+    transform: translateY(-3px);
 }
 
-/* Slider */
-.home-slider {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.2rem;
-}
+/* MOBILE – 425px */
+@media (max-width: 425px) {
 
-.home-slider-btn {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    cursor: pointer;
-    font-weight: 500;
-    transition: var(--transition);
-}
+    .home-bg {
+        background-size: contain;
+        background-position: center top;
+        background-color: #000;
+    }
 
-.home-slider-btn:hover {
-    background: var(--accent);
-    color: #0f0f14;
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
-}
-
-/* Mobile */
-@media (max-width: 430px) {
-    .home-hero {
-        min-height: 100vh;
-        padding: 1rem;
+    .home-content {
+        margin-bottom: 5vh;
+        padding: 1.5rem;
     }
 
     .home-title {
@@ -176,22 +169,11 @@
     }
 
     .home-subtitle {
-        font-size: 1rem;
-        padding: 0 0.5rem;
+        font-size: 0.95rem;
     }
 
     .home-actions {
         flex-direction: column;
-        gap: 0.7rem;
-    }
-
-    .home-slider {
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .home-slider-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        gap: 0.8rem;
     }
 }

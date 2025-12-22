@@ -1,0 +1,56 @@
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+/* LOGO IMAGE — KATTA VA ANIQ */
+.logo-img {
+    width: 100px;
+    /* MUHIM: kattalashtirildi */
+    height: 100px;
+    object-fit: contain;
+}
+
+/* TEXT BLOCK */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+/* ADAM VOYAGE — LOGO BILAN BIR BALANDLIKDA */
+.logo-name {
+    font-size: 1.65rem;
+    /* LOGO bilan mos */
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #0b1c2d;
+    /* NAVY */
+    white-space: nowrap;
+}
+
+/* VOYAGE — GOLD */
+.logo-name span {
+    color: #f6c453;
+}
+
+/* TAGLINE */
+.logo-tagline {
+    font-size: 0.75rem;
+    margin-top: 3px;
+    color: #ff9f1c;
+    /* ORANGE */
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* HOVER — YENGIL PREMIUM */
+.logo-wrap:hover .logo-name {
+    letter-spacing: 1.1px;
+    transition: 0.3s ease;
+}
+
+    

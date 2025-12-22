@@ -1,282 +1,133 @@
-:root {
-    --accent: #0ff;          
-    --accent-dark: #3bf;     
-    --text-light: #ffffff;    
-    --text-muted: #ffffff;    /* yordamchi matnni ham yorqin oq qilamiz */
-    --bg-dark: #0b0b1a;       
-    --card-bg: #1a1a28;       
-    --radius: 12px;
-    --shadow: 0 6px 20px rgba(0, 255, 255, 0.3); 
-    --font-serif: "Merriweather", serif;
-    --font-sans: "Inter", sans-serif;
-    --transition: 0.3s ease;
-}
-
-/* General */
 .about-page {
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-sans);
+    background: #ffffff;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    padding: 24px 0;
 }
 
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.about-container {
-    max-width: 1100px;
+/* SECTION */
+.about-section {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 50 / 50 */
+    gap: 28px;
+    background: #fafafa;
+    border-radius: 14px;
 }
 
-/* Intro */
-.about-intro {
-    height: 90vh;
-    background: url("../photos/registon.jpg") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    color: var(--text-light);
-}
-
-.about-intro::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35); 
+/* LEFT */
+.about-left {
+    padding-right: 10px;
 }
 
 .about-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-family: var(--font-serif);
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 16px rgba(0, 255, 255, 0.8); 
+    font-size: 30px;
+    margin-bottom: 14px;
 }
 
-.about-lead {
-    font-size: 1.2rem;
-    font-weight: 500;
-    max-width: 700px;
-    margin: 0 auto;
-    /* color: var(--text-light); */
-    text-shadow: 0 2px 8px rgba(0, 255, 255, 0.6);
+.about-heading {
+    font-size: 22px;
+    margin: 20px 0 10px;
 }
 
-/* Sections */
-.about-section-title {
-    font-size: 2rem;
-    text-align: center;
-    font-family: var(--font-serif);
-    color: var(--accent);
-    margin: 2rem 0 1rem;
-    text-shadow: 0 2px 6px rgba(0, 255, 255, 0.3);
+.about-text {
+    font-size: 15.8px;
+    line-height: 1.75;
+    margin-bottom: 12px;
 }
 
-.about-section-desc {
-    text-align: center;
-    font-size: 1rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    line-height: 1.6;
-    color: var(--text-light); /* yorqin oq */
+/* LIST */
+.about-list {
+    padding-left: 18px;
+    margin: 10px 0 14px;
 }
 
-/* Cards */
-.about-cards {
+.about-list li {
+    font-size: 15.5px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+}
+
+/* RIGHT */
+.about-right {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 22px;
 }
 
-.about-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+/* IMAGE CARD */
+.about-image-card {
+    background: #ffffff;
+    border-radius: 14px;
     overflow: hidden;
-    width: 300px;
-    cursor: pointer;
-    transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
 }
 
-.about-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6);
-}
-
-.about-card-img {
+/* FULL IMAGE — NO CROP */
+.about-image-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    /* MUHIM: to‘liq ko‘rinadi */
+    display: block;
 }
 
-.about-card-body {
-    padding: 1rem;
-    text-align: center;
+/* CAPTION */
+.about-image-caption {
+    font-size: 14.5px;
+    padding: 10px 12px;
+    background: #f2f2f2;
 }
 
-.about-card-body h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+.about-gold-btn {
+    margin-top: 16px;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #d4af37, #f3d67a);
+    color: #000000;
+    font-size: 15px;
     font-weight: 600;
-    color: var(--text-light);
-    text-shadow: 0 1px 6px rgba(0, 255, 255, 0.4);
-}
-
-.about-card-body p {
-    color: var(--text-light); /* kichik matnni yorqin oq qilamiz */
-}
-
-/* Regions */
-.about-regions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.about-region-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
-}
-
-.about-region-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
-}
-
-.about-region-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.about-region-body {
-    padding: 1rem;
-    text-align: center;
-}
-
-.about-region-body h3,
-.about-region-body p {
-    color: var(--text-light); /* yorqin oq */
-    text-shadow: 0 1px 6px rgba(0, 255, 255, 0.4);
-}
-
-/* Modal */
-.about-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    animation: fadeUp 0.4s ease;
-}
-
-.about-modal-content {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-    padding: 1.5rem;
-    max-width: 600px;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    color: var(--text-light);
-}
-
-.about-modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    background: none;
     border: none;
+    border-radius: 32px;
     cursor: pointer;
-    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
 }
 
-.about-modal-img {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    margin-bottom: 1rem;
+/* HOVER */
+.about-gold-btn:hover {
+    background: linear-gradient(135deg, #c9a227, #e8c25f);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(212, 175, 55, 0.45);
 }
 
-/* CTA */
-.about-cta {
-    background: var(--bg-dark);
-    text-align: center;
-    padding: 3rem 1rem;
-    border-radius: var(--radius);
-    margin: 3rem auto;
+/* ACTIVE (bosilganda) */
+.about-gold-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
 }
 
-.about-cta-title {
-    font-size: 2rem;
-    font-family: var(--font-serif);
-    margin-bottom: 1rem;
-    color: var(--accent);
-    text-shadow: 0 2px 10px rgba(0, 255, 255, 0.5);
-}
 
-.about-cta-desc {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-light); /* yorqin oq */
-}
+/* MOBILE */
+@media (max-width: 425px) {
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
 
-.about-btn {
-    background: var(--accent);
-    color: black;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
-    font-size: 1rem;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.about-btn:hover {
-    background: var(--accent-dark);
-    transform: scale(1.05);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
     .about-title {
-        font-size: 2.2rem;
+        font-size: 24px;
     }
 
-    .about-lead {
-        font-size: 1rem;
+    .about-heading {
+        font-size: 19px;
     }
 
-    .about-section-title {
-        font-size: 1.6rem;
-    }
-
-    .about-cta-title {
-        font-size: 1.6rem;
+    .about-text,
+    .about-list li {
+        font-size: 14.5px;
     }
 }

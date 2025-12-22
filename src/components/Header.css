@@ -1,135 +1,115 @@
 :root {
-    --bg: #fff;
-    --accent: #f4a261;
-    --accent-hover: #e39545;
-    --transition: 0.3s ease;
-    --radius: 8px;
+    --bg-light: #ffffff;
+    --bg-soft: #f5f8fc;
+
+    --navy: #0b1c2d;
+    --orange: #ff9f1c;
+
+    --text-dark: #0b1c2d;
+    --radius: 14px;
+    --transition: 0.35s cubic-bezier(.4, 0, .2, 1);
 }
 
-/* Header asosiy */
-.site-header {
-    background: var(--footer-bg);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+/* LOGO ostidagi underline ni o‘chirish */
+.logo::after {
+    display: none !important;
+}
+
+
+/* HEADER */
+.header {
     position: sticky;
     top: 0;
-    z-index: 200;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    background: var(--bg-light);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* Ichki container */
-.container {
+/* CONTAINER */
+.header-container {
     max-width: 1200px;
     margin: auto;
     padding: 1rem 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 70px;
 }
 
-/* Logo */
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.1);
-}
-
-/* Desktop nav */
+/* DESKTOP NAV */
 .nav-desktop {
     display: flex;
     gap: 2rem;
 }
 
 .nav-link {
-    color: white;
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 500;
     position: relative;
-    transition: var(--transition);
 }
 
 .nav-link::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -3px;
+    left: 50%;
+    bottom: -6px;
     width: 0;
     height: 2px;
-    background: var(--accent);
-    transition: width 0.3s ease;
+    background: var(--orange);
+    transition: var(--transition);
+    transform: translateX(-50%);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
-/* Desktop controls */
-.controls-desktop {
+/* ACTIONS */
+.header-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
-.controls-desktop select {
-    padding: 0.45rem 0.7rem;
-    border-radius: var(--radius);
-    border: 1px solid #ccc;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.controls-desktop select:hover {
-    border-color: var(--accent);
-    box-shadow: 0 2px 8px rgba(244, 162, 97, 0.3);
-}
-
-/* Button contact */
-.btn-contact {
-    background: var(--accent);
-    color:black;
-    padding: 0.5rem 0.9rem;
+.contact-btn {
+    background: var(--orange);
+    color: #000;
+    padding: 0.55rem 1rem;
     border-radius: var(--radius);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
-.btn-contact:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(244, 162, 97, 0.4);
+/* TOGGLES */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: var(--bg-soft);
+    cursor: pointer;
 }
 
-/* Hamburger */
-.hamburger {
+/* MENU BUTTON */
+.menu-btn {
     display: none;
     background: none;
     border: none;
-    cursor: pointer;
-    padding: 0.3rem;
-    z-index: 210;
+    font-size: 1.8rem;
 }
 
-/* Overlay */
+/* OVERLAY */
 .overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 99;
+    inset: 0;
+    background: rgba(0, 0, 0, .4);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: var(--transition);
 }
 
 .overlay.show {
@@ -137,75 +117,90 @@
     pointer-events: all;
 }
 
-/* Mobile menu */
+/* MOBILE MENU */
 .mobile-menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 260px;
-    height: 100%;
-    background: var(--bg);
-    display: flex;
-    flex-direction: column;
-    padding: 4rem 1.5rem;
-    gap: 1.5rem;
-    transition: all 0.5s ease;
-    z-index: 100;
-    opacity: 0;
+    right: 0;
+    width: 60%;
+    max-width: 380px;
+    height: 100vh;
+    background: var(--bg-light);
+    transform: translateX(100%);
+    transition: var(--transition);
+    box-shadow: -15px 0 40px rgba(0, 0, 0, .15);
+    z-index: 999;
 }
 
 .mobile-menu.open {
-    right: 0;
-    opacity: 1;
+    transform: translateX(0);
 }
 
-.mobile-link {
-    color: var(--text);
+/* CLOSE */
+.mobile-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+}
+
+/* MOBILE CONTENT */
+.mobile-inner {
+    padding: 6rem 1.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.mobile-inner a {
+    font-size: 1.15rem;
     text-decoration: none;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    color: var(--text-dark);
 }
 
-.mobile-link:hover {
-    color: var(--accent);
-    transform: scale(1.05);
-}
-
-/* Mobile select */
 .mobile-select {
-    padding: 0.45rem;
-    border: 1px solid #ccc;
+    padding: .6rem;
     border-radius: var(--radius);
-    transition: all 0.3s ease;
 }
 
-.mobile-select:hover {
-    border-color: var(--accent);
-    box-shadow: 0 2px 8px rgba(244, 162, 97, 0.3);
+.mobile-theme {
+    align-self: center;
 }
 
-/* Responsive */
+/* LOGO NavLink underline ni butunlay o‘chirish */
+.logo {
+    text-decoration: none !important;
+}
+
+.logo:visited,
+.logo:hover,
+.logo:active {
+    text-decoration: none !important;
+}
+
+/* NavLink active bo‘lganda ham logo ostida chiziq chiqmasin */
+.logo.active {
+    text-decoration: none !important;
+}
+
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
 
     .nav-desktop,
-    .controls-desktop {
+    .header-actions {
         display: none;
     }
 
-    .hamburger {
+    .menu-btn {
         display: block;
-        color: var(--accent);
     }
 }
 
-@media (max-width: 430px) {
-    .container {
-        min-height: 72px;
-    }
-
-    .mobile-menu {
-        width: 60%;
-        padding: 4rem 1rem;
-        color: black;
-    }
+@media (max-width: 425px) {
+        .logo-img {
+            display: none;
+        }
 }

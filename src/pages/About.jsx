@@ -1,118 +1,160 @@
-import React, { useState } from "react";
+import React from "react";
 import "./About.css";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 
-import img1 from "../photos/reg.jpg";
-import img2 from "../photos/sh.jpg";
-import img3 from "../photos/xiva.jpg";
-import img4 from "../photos/buxoroArk.jpg";
-import img5 from "../photos/A_T.jpg";
-import img6 from "../photos/toshkent.jpg";
-import img7 from "../photos/shahrisabz.jpg";
+import img1 from "../photos/A_T.jpg";
+import img2 from "../photos/bb.jpg";
+import img3 from "../photos/observatoria.jpg";
 
 const About = () => {
-    const { t } = useTranslation();
-    const [selected, setSelected] = useState(null);
-
-    const regions = [
-        { img: img1, title: t("about.samarkand.title"), desc: t("about.samarkand.desc") },
-        { img: img6, title: t("about.tashkent.title"), desc: t("about.tashkent.desc") },
-        { img: img3, title: t("about.khiva.title"), desc: t("about.khiva.desc") },
-        { img: img4, title: t("about.bukhara.title"), desc: t("about.bukhara.desc") },
-        { img: img7, title: t("about.shahrisabz.title"), desc: t("about.shahrisabz.desc") }
-    ];
-
     return (
         <main className="about-page">
             <Helmet>
-                <title>SamTour — About Us</title>
+                <title>Adam Voyage — Biz haqimizda</title>
                 <meta
                     name="description"
-                    content="Learn more about SamTour, our mission, and how we create unique travel experiences across Uzbekistan."
+                    content="Adam Voyage — O‘zbekiston bo‘ylab individual va mazmunli sayohatlar"
                 />
             </Helmet>
 
-            {/* Intro */}
-            <section className="about-intro fade-in">
-                <div className="about-container">
-                    <h1 className="about-title">{t("about.title")}</h1>
-                    <p className="about-lead">{t("about.lead")}</p>
-                </div>
-            </section>
+            <section className="about-section">
+                {/* LEFT */}
+                <div className="about-left">
+                    <h1 className="about-title">🌍 Biz haqimizda</h1>
 
-            {/* Mission */}
-            <section className="about-mission">
-                <div className="about-container">
-                    <h2 className="about-section-title">{t("about.mission_title")}</h2>
-                    <p className="about-section-desc">{t("about.mission_desc")}</p>
-                </div>
-            </section>
+                    <p className="about-text">
+                        <strong>ADAM VOYAGE</strong> — O‘zbekiston bo‘ylab yuqori sifatli,
+                        individual va puxta rejalashtirilgan sayohatlar tashkil etuvchi
+                        professional sayyohlik kompaniyasidir.
+                        Biz uchun sayohat — bu shunchaki manzil emas,
+                        balki <strong>inson xotirasida uzoq saqlanib qoladigan mazmunli tajriba</strong>.
+                    </p>
 
-            {/* Values */}
-            <section className="about-values">
-                <div className="about-container">
-                    <h2 className="about-section-title">{t("about.why_title")}</h2>
-                    <div className="about-cards">
-                        {[{ img: img2, title: t("about.expertise_title"), desc: t("about.expertise_desc") },
-                        { img: img3, title: t("about.personalized_title"), desc: t("about.personalized_desc") },
-                        { img: img5, title: t("about.support_title"), desc: t("about.support_desc") }].map((card, i) => (
-                            <div className="about-card" key={i}>
-                                <img src={card.img} alt={card.title} className="about-card-img" />
-                                <div className="about-card-body">
-                                    <h3>{card.title}</h3>
-                                    <p>{card.desc}</p>
-                                </div>
-                            </div>
-                        ))}
+                    <p className="about-text">
+                        ✨ Har bir safar aniq maqsad asosida ishlab chiqiladi.
+                        Sayohatchining qiziqishlari, vaqti va kutilmalariga mos
+                        <strong>moslashtirilgan dastur</strong> yaratiladi.
+                        Tayyor shablonlardan foydalanilmaydi —
+                        har bir marshrut o‘ziga xos va betakrordir.
+                    </p>
+
+                    <p className="about-text">
+                        🤝 Biz faoliyatimizda ishonch va mas’uliyatni ustuvor deb bilamiz.
+                        Shu sababli barcha jarayonlar shaffof,
+                        tushunarli va professional tarzda olib boriladi.
+                        Sayohatchining o‘zini xotirjam va ishonchli his qilishi
+                        biz uchun eng muhim mezondir.
+                    </p>
+
+                    <p className="about-text">
+                        🏛 ADAM VOYAGE bilan siz O‘zbekistonni
+                        oddiy tomoshabin sifatida emas,
+                        balki <strong>mahalliy muhitni his etgan holda</strong> kashf etasiz.
+                        Tarixiy obidalar, buyuk ajdodlar merosi
+                        va me’moriy yodgorliklar siz uchun
+                        jonli va mazmunli hikoyaga aylanadi.
+                    </p>
+
+                    <p className="about-text">
+                        🌿 Sayohatlarimiz faqat shaharlar bilan cheklanib qolmaydi.
+                        Tog‘ manzaralari, sokin qishloq hayoti
+                        va mahalliy aholi bilan muloqot
+                        safaringizni yanada boy va unutilmas qiladi.
+                    </p>
+
+                    <h2 className="about-heading">🚀 Nima uchun aynan ADAM VOYAGE?</h2>
+
+                    <ul className="about-list">
+                        <li>🧭 Har bir mijoz uchun individual va moslashtirilgan marshrutlar</li>
+                        <li>🏛 Tarix, madaniyat va milliy merosga chuqur yondashuv</li>
+                        <li>🏞 Tabiat qo‘ynida sokin va mazmunli sayohatlar</li>
+                        <li>🐪 Noodatiy va esda qolarli sarguzashtlar</li>
+                        <li>💬 Sayohat davomida doimiy aloqa va to‘liq qo‘llab-quvvatlash</li>
+                    </ul>
+
+                    <p className="about-text">
+                        🌐 ADAM VOYAGE chet elda faoliyat yuritayotgan
+                        sayyohlik kompaniyalari bilan hamkorlikni
+                        strategik yo‘nalish sifatida rivojlantiradi.
+                        Xalqaro hamkorlar bilan ishlash orqali
+                        biz zamonaviy tajribalarni joriy etib,
+                        xizmatlar sifatini doimiy ravishda oshirib boramiz.
+                    </p>
+
+                    <p className="about-text">
+                        ✈️ Agar siz xorijda faoliyat yuritayotgan
+                        sayyohlik kompaniyasi bo‘lsangiz yoki
+                        ishonchli xalqaro hamkor izlayotgan bo‘lsangiz,
+                        biz siz bilan hamkorlikni yo‘lga qo‘yishdan mamnunmiz.
+                    </p>
+
+                    <button
+                        className="about-gold-btn"
+                        onClick={() => window.location.href = "/contact"}
+                    >
+                        🤝 Hamkorlik uchun biz bilan bog‘laning
+                    </button>
+
+                    <p className="about-text">
+                        🎯 Bizning asosiy maqsadimiz —
+                        har bir sayohatchida yana qaytish istagini uyg‘otadigan,
+                        chuqur va samimiy tajriba yaratishdir.
+                        ADAM VOYAGE bilan har bir safar
+                        chinakam qoniqish va yorqin xotiralar bilan yakunlanadi.
+                    </p>
+
+                    <p className="about-text">
+                        🌟 ADAM VOYAGE bilan sayohat —
+                        puxta o‘ylangan reja,
+                        aniqlik bilan tashkil etilgan jarayon
+                        va yuqori sifat natijasidir.
+                    </p>
+
+                    <p className="about-text">
+                        ✨ Biz sizga O‘zbekistonni
+                        boshqalardan farqli tarzda,
+                        chuqur mazmun va samimiy muhitda
+                        kashf etish imkoniyatini taqdim etamiz.
+                    </p>
+
+                    <p className="about-text">
+                        ADAM VOYAGE uzoq muddatli va barqaror hamkorlikka
+                        asoslangan professional munosabatlarni rivojlantiradi.
+                        Biz mahalliy va xorijiy turizm vakillari bilan
+                        o‘zaro manfaatli, ochiq va ishonchli aloqalar
+                        o‘rnatishni muhim deb bilamiz.
+                        Aynan shu yondashuv xizmatlarimiz sifatini
+                        doimiy ravishda yuqori darajada saqlashga xizmat qiladi.
+                    </p>
+
+                </div>
+
+
+                {/* RIGHT */}
+                <div className="about-right">
+                    <div className="about-image-card">
+                        <img src={img1} alt="Amir Temur maqbarasi (Gur-e Amir) — Samarqand" />
+                        <p className="about-image-caption">
+                            Amir Temur maqbarasi (Gur-e Amir) — Samarqand
+                        </p>
+                    </div>
+
+                    <div className="about-image-card">
+                        <img src={img2} alt="Bibi-Xonim masjidi — Samarqand" />
+                        <p className="about-image-caption">
+                            Bibi-Xonim masjidi — Samarqand
+                        </p>
+                    </div>
+
+                    <div className="about-image-card">
+                        <img src={img3} alt="Mirzo Ulug‘bek rasadxonasi — Samarqand" />
+                        <p className="about-image-caption">
+                            Mirzo Ulug‘bek rasadxonasi — Samarqand
+                        </p>
                     </div>
                 </div>
             </section>
-
-            {/* Explore Regions */}
-            <section className="about-explore">
-                <div className="about-container">
-                    <h2 className="about-section-title">{t("about.explore_title")}</h2>
-                    <div className="about-regions-grid">
-                        {regions.map((region, i) => (
-                            <div
-                                className="about-region-card"
-                                key={i}
-                                onClick={() => setSelected(region)}
-                            >
-                                <img src={region.img} alt={region.title} className="about-region-img" />
-                                <div className="about-region-body">
-                                    <h3>{region.title}</h3>
-                                    <p>{region.desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Modal */}
-            {selected && (
-                <div className="about-modal" onClick={() => setSelected(null)}>
-                    <div className="about-modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="about-modal-close" onClick={() => setSelected(null)}>✕</button>
-                        <img src={selected.img} alt={selected.title} className="about-modal-img" />
-                        <h3>{selected.title}</h3>
-                        <p>{selected.desc}</p>
-                    </div>
-                </div>
-            )}
-
-            {/* CTA */}
-            <section className="about-cta">
-                <div className="about-container">
-                    <h2 className="about-cta-title">{t("about.cta_title")}</h2>
-                    <p className="about-cta-desc">{t("about.cta_desc")}</p>
-                    <Link to="/contact" className="about-btn">{t("about.contact_button")}</Link>
-                </div>
-            </section>
-        </main>
+        </main >
     );
 };
 

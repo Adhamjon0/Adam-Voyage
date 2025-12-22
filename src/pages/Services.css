@@ -1,327 +1,121 @@
-:root {
-    --accent: #0ff;
-    /* neon moviy */
-    --accent-dark: #3bf;
-    /* hover neon */
-    --bg-dark: #0b0b1a;
-    /* qorong‘i fon */
-    --text-light: #ffffff;
-    /* asosiy matn */
-    --text-muted: #a0f0ff;
-    /* yordamchi matn */
-    --card-bg: #1a1a28;
-    --radius: 14px;
-    --shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.35);
-    --font-serif: "Merriweather", serif;
-    --font-sans: "Inter", sans-serif;
-    --transition: 0.3s ease;
+/* PAGE */
+.services-page {
+    background: #ffffff;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    padding: 24px 0;
 }
 
-/* Page */
-.service-page {
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-sans);
-    line-height: 1.6;
-}
-
-/* Container */
-.service-container {
-    max-width: 1100px;
+/* MAIN SECTION */
+.services-section {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-/* Intro */
-.service-intro {
-    height: 60vh;
-    background: url('../photos/registon.jpg') center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--text-light);
-}
-
-.service-intro::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-}
-
-.service-intro .service-container {
-    position: relative;
-    z-index: 1;
-}
-
-.service-title {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-family: var(--font-serif);
-    margin: 0 0 .5rem;
-    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.service-lead {
-    font-size: 1.1rem;
-    color: var(--text-light);
-}
-
-/* Section title */
-.section-title {
-    text-align: center;
-    font-size: clamp(1.4rem, 2.4vw, 2rem);
-    font-family: var(--font-serif);
-    margin: 2.25rem 0 1.25rem;
-    color: var(--accent);
-}
-
-/* Service cards */
-.service-cards {
+    padding: 28px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: #fafafa;
+    border-radius: 18px;
 }
 
-.service-card {
-    background: var(--card-bg);
-    box-shadow: var(--shadow);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(0, 255, 255, 0.3);
-}
-
-.service-card__title {
+/* ================= LEFT ================= */
+.services-title {
+    font-size: 30px;
     font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0 0 .35rem;
-    color: var(--text-light);
+    margin-bottom: 16px;
 }
 
-.service-card__desc {
-    margin: 0;
-    font-size: .95rem;
-    color: var(--text-muted);
+.services-text {
+    font-size: 15.8px;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: #222;
 }
 
-/* Regions grid */
-.region-grid {
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.service-item h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.service-item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #333;
+}
+
+/* ================= RIGHT ================= */
+
+/* GRID */
+.regions-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
-@media (max-width: 1024px) {
-    .region-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .region-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 560px) {
-    .region-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* CARD */
 .region-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: var(--radius);
-    background: var(--card-bg);
-    box-shadow: var(--shadow);
+    background: #ffffff;
+    border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-.region-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 30px rgba(0, 255, 255, 0.3);
-}
 
-.region-thumb {
+/* IMAGE */
+.region-img {
     width: 100%;
-    aspect-ratio: 16/11;
-    overflow: hidden;
-}
-
-.region-thumb img {
-    width: 100%;
-    height: 100%;
+    height: 330px;
+    /* MUHIM */
     object-fit: cover;
+    object-position: center;
     display: block;
+    background-color: #eaeaea;
 }
 
-.region-meta {
-    padding: .75rem .85rem 1rem;
-}
 
-.region-title {
-    font-weight: 700;
-    font-size: 1rem;
-    margin: 0 0 .25rem;
-    color: var(--text-light);
-}
-
-.region-desc {
-    font-size: .9rem;
-    color: var(--text-muted);
-    margin: 0;
-}
-
-/* Modal */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal.fullscreen {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3.5rem 1rem;
-}
-
-.modal-content {
-    width: min(860px, 92vw);
-    background: rgba(26, 26, 40, 0.8);
-    border-radius: 20px;
-    padding: 1.25rem 1.25rem 1.5rem;
-    color: var(--text-light);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* NAME */
+.region-name {
+    padding: 12px 10px;
+    font-size: 16px;
+    font-weight: 600;
     text-align: center;
+    background: #fafafa;
+    color: #000;
 }
 
-.modal-title {
-    font-size: clamp(1.6rem, 3.6vw, 2.4rem);
-    margin: .25rem 0 .5rem;
-    color: var(--accent);
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
-    font-family: var(--font-serif);
+/* HOVER */
+.region-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
 }
 
-.modal-sub,
-.modal-more {
-    font-size: 1.05rem;
-    color: var(--text-light);
-    margin-bottom: .5rem;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    padding: .7rem 1.2rem;
-    border-radius: var(--radius);
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-}
-
-.modal-btn {
-    background: var(--accent);
-    color: var(--bg-dark);
-    box-shadow: 0 10px 22px rgba(0, 255, 255, 0.25);
-    margin: .25rem .4rem;
-}
-
-.modal-btn:hover {
-    transform: translateY(-1px);
-    background: var(--accent-dark);
-}
-
-.modal-btn.outline {
-    background: transparent;
-    color: var(--text-light);
-    border: 1.5px solid rgba(0, 255, 255, 0.6);
-}
-
-/* Close button */
-.modal-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 42px;
-    height: 42px;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.35);
-    color: #fff;
-    font-size: 20px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    transition: background var(--transition);
-}
-
-.modal-close:hover {
-    background: rgba(0, 0, 0, 0.55);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .service-intro {
-        height: 50vh;
+/* ================= MOBILE ================= */
+@media (max-width: 425px) {
+    .services-section {
+        grid-template-columns: 1fr;
+        padding: 18px;
     }
 
-    .service-lead {
-        font-size: 1rem;
+    .services-title {
+        font-size: 24px;
     }
 
-    .modal-content {
-        width: min(640px, 94vw);
-    }
-}
-
-@media (max-width: 430px) {
-    .modal.fullscreen {
-        padding: 3.25rem .75rem;
+    .regions-grid {
+        grid-template-columns: 1fr;
     }
 
-    .modal-content {
-        padding: 1rem .9rem 1.1rem;
-        border-radius: 16px;
-    }
-
-    .modal-title {
-        font-size: 1.6rem;
-    }
-
-    .modal-sub,
-    .modal-more {
-        font-size: 1rem;
-    }
-
-    .region-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .region-name {
+        font-size: 15px;
     }
 }

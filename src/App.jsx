@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Gallery from './pages/Galery';
 import Intro from './components/Intro';
+import Samarqand from "./regions/Sam";
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -27,9 +28,11 @@ const pageTransition = {
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
+
         <Route
           path="/"
           element={
@@ -44,14 +47,33 @@ const AnimatedRoutes = () => {
             </motion.div>
           }
         />
+
         <Route path="/about" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><About /></motion.div>} />
         <Route path="/services" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><Services /></motion.div>} />
         <Route path="/contact" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><Contact /></motion.div>} />
         <Route path="/gallery" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><Gallery /></motion.div>} />
+
+        {/* ✅ SAMARQAND SAHIFASI */}
+        <Route
+          path="/samarqand"
+          element={
+            <motion.div
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
+              <Samarqand />
+            </motion.div>
+          }
+        />
+
       </Routes>
     </AnimatePresence>
   );
 };
+
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);

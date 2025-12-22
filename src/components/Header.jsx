@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FiPhone, FiMenu, FiX } from "react-icons/fi";
+import { FiPhone, FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import Logo from "./Logo";
@@ -22,36 +22,52 @@ const LANGUAGES = [
 export default function Header() {
     const { t } = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isDarkIcon, setIsDarkIcon] = useState(false);
     const menuRef = useRef(null);
 
     const handleLangChange = (e) => {
-        const selectedLang = e.target.value;
-        i18n.changeLanguage(selectedLang);
-        localStorage.setItem("i18nextLng", selectedLang);
+        const lang = e.target.value;
+        i18n.changeLanguage(lang);
+        localStorage.setItem("i18nextLng", lang);
     };
 
-    const closeMenu = () => setMenuOpen(false);
+    const toggleThemeIcon = () => {
+        setIsDarkIcon((prev) => !prev);
+    };
 
-    // Sahifaning boshqa joyini bosganda menyu yopiladi
+    const closeMenu = () => {
+        setMenuOpen(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     useEffect(() => {
-        const handleClickOutside = (e) => {
+        const handleOutsideClick = (e) => {
             if (menuRef.current && !menuRef.current.contains(e.target)) {
                 setMenuOpen(false);
             }
         };
+
         if (menuOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener("mousedown", handleOutsideClick);
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
         }
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+            document.body.style.overflow = "auto";
+        };
     }, [menuOpen]);
 
     return (
-        <header className="site-header">
-            <div className="container">
+        <header className="header">
+            <div className="header-container">
                 <NavLink to="/" className="logo" onClick={closeMenu}>
                     <Logo />
                 </NavLink>
 
+                {/* DESKTOP NAV */}
                 <nav className="nav-desktop">
                     <NavLink to="/" end className="nav-link">{t("nav.home")}</NavLink>
                     <NavLink to="/about" className="nav-link">{t("nav.about")}</NavLink>
@@ -59,7 +75,8 @@ export default function Header() {
                     <NavLink to="/gallery" className="nav-link">{t("nav.gallery")}</NavLink>
                 </nav>
 
-                <div className="controls-desktop">
+                {/* DESKTOP ACTIONS */}
+                <div className="header-actions">
                     <select
                         onChange={handleLangChange}
                         value={localStorage.getItem("i18nextLng") || "en"}
@@ -68,42 +85,66 @@ export default function Header() {
                             <option key={l.code} value={l.code}>{l.label}</option>
                         ))}
                     </select>
-                    <NavLink to="/contact" className="btn-contact">
+
+                    <NavLink to="/contact" className="contact-btn">
                         <FiPhone /> {t("nav.contact")}
                     </NavLink>
+
+                    <button className="theme-toggle" onClick={toggleThemeIcon}>
+                        {isDarkIcon ? <FiMoon /> : <FiSun />}
+                    </button>
                 </div>
 
+                {/* HAMBURGER */}
                 <button
-                    className={`hamburger ${menuOpen ? "active" : ""}`}
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    className="menu-btn"
+                    onClick={() => setMenuOpen(true)}
                     aria-label="Menu"
                 >
-                    {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+                    <FiMenu />
                 </button>
             </div>
 
-            {/* Overlay */}
-            <div className={`overlay ${menuOpen ? "show" : ""}`}></div>
+            {/* OVERLAY */}
+            <div
+                className={`overlay ${menuOpen ? "show" : ""}`}
+                onClick={closeMenu}
+            />
 
-            {/* Mobile menu */}
-            <div ref={menuRef} className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-                <NavLink to="/" end onClick={closeMenu} className="mobile-link">{t("nav.home")}</NavLink>
-                <NavLink to="/about" onClick={closeMenu} className="mobile-link">{t("nav.about")}</NavLink>
-                <NavLink to="/services" onClick={closeMenu} className="mobile-link">{t("nav.services")}</NavLink>
-                <NavLink to="/gallery" onClick={closeMenu} className="mobile-link">{t("nav.gallery")}</NavLink>
-                <NavLink to="/contact" onClick={closeMenu} className="btn-contact">
-                    <FiPhone /> {t("nav.contact")}
-                </NavLink>
-                <select
-                    onChange={handleLangChange}
-                    value={localStorage.getItem("i18nextLng") || "en"}
-                    className="mobile-select"
-                >
-                    {LANGUAGES.map((l) => (
-                        <option key={l.code} value={l.code}>{l.label}</option>
-                    ))}
-                </select>
-            </div>
+            {/* MOBILE MENU */}
+            <aside
+                ref={menuRef}
+                className={`mobile-menu ${menuOpen ? "open" : ""}`}
+            >
+                <button className="mobile-close" onClick={closeMenu}>
+                    <FiX />
+                </button>
+
+                <nav className="mobile-inner">
+                    <NavLink to="/" end onClick={closeMenu}>{t("nav.home")}</NavLink>
+                    <NavLink to="/about" onClick={closeMenu}>{t("nav.about")}</NavLink>
+                    <NavLink to="/services" onClick={closeMenu}>{t("nav.services")}</NavLink>
+                    <NavLink to="/gallery" onClick={closeMenu}>{t("nav.gallery")}</NavLink>
+
+                    <NavLink to="/contact" className="contact-btn mobile-cta" onClick={closeMenu}>
+                        <FiPhone /> {t("nav.contact")}
+                    </NavLink>
+
+                    <select
+                        className="mobile-select"
+                        onChange={handleLangChange}
+                        value={localStorage.getItem("i18nextLng") || "en"}
+                    >
+                        {LANGUAGES.map((l) => (
+                            <option key={l.code} value={l.code}>{l.label}</option>
+                        ))}
+                    </select>
+
+                    <button className="theme-toggle mobile-theme" onClick={toggleThemeIcon}>
+                        {isDarkIcon ? <FiMoon /> : <FiSun />}
+                    </button>
+                </nav>
+            </aside>
         </header>
     );
 }

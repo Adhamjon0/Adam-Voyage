@@ -8,7 +8,7 @@ import {
     FaTelegramPlane,
     FaWhatsapp,
     FaEnvelope
-} from 'react-icons/fa'; // ✅ Oddiy va ishonchli iconlar
+} from 'react-icons/fa';
 
 export default function Footer() {
     const { t } = useTranslation();
@@ -16,11 +16,13 @@ export default function Footer() {
     return (
         <footer className="site-footer minimal-footer">
             <div className="footer-inner">
+
                 <div className="footer-section">
-                    <h4 className="footer-title">SamTour</h4>
+                    <h4 className="footer-title">
+                        Adam <span>Voyage</span>
+                    </h4>
                     <p className="footer-text">
-                        {t("footer.description")}
-                    </p>
+                        Discover Uzbekistan with us                    </p>
                 </div>
 
                 <div className="footer-section">
@@ -37,34 +39,18 @@ export default function Footer() {
                 <div className="footer-section">
                     <h4 className="footer-title">{t("footer.connect")}</h4>
                     <div className="socials icons-only">
-                        <a href="https://instagram.com/__adhamjon18" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram />
-                        </a>
-                        <a href="https://www.facebook.com/gayrat.qilichev.9 " className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <FaFacebookF />
-                        </a>
-                        <a href="https://wa.me/998917077291" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <FaWhatsapp />
-                        </a>
-                        <a href="https://t.me/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer">
-                            <FaTelegramPlane />
-                        </a>
-                        <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ cursor: 'pointer' }}
-                            className="social-icon">
-                            <FaEnvelope />
-                        </a>
+                        <a href="https://instagram.com/__adhamjon18" className="social-icon" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                        <a href="https://www.facebook.com/gayrat.qilichev.9" className="social-icon" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                        <a href="https://wa.me/998917077291" className="social-icon" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+                        <a href="https://t.me/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer"><FaTelegramPlane /></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sodiqovadhamjon0@gmail.com" className="social-icon" target="_blank" rel="noopener noreferrer"><FaEnvelope /></a>
                     </div>
                 </div>
+
             </div>
 
             <div className="footer-bottom">
-                <div className="copyright">
-                    © {new Date().getFullYear()} SamTour. {t("footer.rights")}
-                </div>
+                © {new Date().getFullYear()} Adam Voyage. {t("footer.rights")}
             </div>
         </footer>
     );

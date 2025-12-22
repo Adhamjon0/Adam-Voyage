@@ -1,22 +1,19 @@
-import React from 'react';
+import "./Logo.css";
+import logo from "../photos/logo_av.png";
 
-const Logo = ({ className = '', size = 28 }) => (
-    <div
-        className={className}
-        style={{
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 800,
-            fontSize: size,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-            cursor: 'pointer',
-            userSelect: 'none'
-        }}
-    >
-        <span style={{ color: '#2B7A78', letterSpacing: '1px' }}>Sam</span>
-        <span style={{ color: '#F4A261' }}>Tour</span>
-    </div>
-);
+export default function Logo() {
+    return (
+        <div className="logo-wrap">
+            <img src={logo} alt="Adam Voyage logo" className="logo-img" />
 
-export default Logo;
+            <div className="logo-text">
+                <span className="logo-name">
+                    Adam <span>Voyage</span>
+                </span>
+                <span className="logo-tagline">
+                    Discover Uzbekistan with us
+                </span>
+            </div>
+        </div>
+    );
+}
