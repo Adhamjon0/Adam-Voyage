@@ -47,7 +47,7 @@ const Gallery = () => {
     return (
         <section className="gallery-section">
             <Helmet>
-                <title>SamTour — Travel Gallery</title>
+                <title>Adam Voyage — Travel Gallery</title>
                 <meta
                     name="description"
                     content="Browse our gallery of stunning Uzbekistan destinations and unforgettable travel moments."

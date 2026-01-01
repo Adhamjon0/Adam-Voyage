@@ -142,7 +142,7 @@ const Contact = () => {
                         </div>
 
                         <a
-                            href="https://wa.me/998900000000"
+                            href="https://wa.me/998917077291"
                             target="_blank"
                             rel="noreferrer"
                             className="personal-cta"
@@ -156,17 +156,17 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-info">
-                        <div><FaPhoneAlt /> +998 90 000 00 00</div>
-                        <div><FaEnvelope /> info@adamvoyage.com</div>
+                        <div><FaPhoneAlt /> +998 91 707 72 91</div>
+                        <div><FaEnvelope />adamvoyage.uzb@gmail.com</div>
                         <div><FaMapMarkerAlt /> Samarkand, Uzbekistan</div>
                     </div>
 
                     <div className="social-icons">
-                        <a href="#"><FaInstagram /></a>
-                        <a href="#"><FaWhatsapp /></a>
-                        <a href="#"><FaFacebookF /></a>
-                        <a href="#"><FaTelegramPlane /></a>
-                        <a href="#"><FaEnvelope /></a>
+                        <a href="https://instagram.com/_adamvoyage"><FaInstagram /></a>
+                        <a href="https://wa.me/998917077291"><FaWhatsapp /></a>
+                        <a href="https://www.facebook.com/gayrat.qilichev.9"><FaFacebookF /></a>
+                        <a href="https://t.me/the_adhamjon"><FaTelegramPlane /></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adamvoyage.uzb@gmail.com"><FaEnvelope /></a>
                     </div>
 
                     <div className="social-proof">
