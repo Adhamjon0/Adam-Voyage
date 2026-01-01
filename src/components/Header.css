@@ -10,7 +10,12 @@
     --transition: 0.35s cubic-bezier(.4, 0, .2, 1);
 }
 
-/* LOGO ostidagi underline ni o‘chirish */
+/* LOGO underline OFF */
+/* LOGO underline ni o‘chirish – LOGONI YASHIRMASDAN */
+.logo {
+    text-decoration: none !important;
+}
+
 .logo::after {
     display: none !important;
 }
@@ -56,8 +61,8 @@
     width: 0;
     height: 2px;
     background: var(--orange);
-    transition: var(--transition);
     transform: translateX(-50%);
+    transition: var(--transition);
 }
 
 .nav-link:hover::after,
@@ -70,8 +75,79 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    position: relative;
 }
 
+/* LANGUAGE SELECT – PREMIUM STYLE */
+.lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--navy);
+
+    padding: 0.7rem 2.6rem 0.7rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(11, 28, 45, 0.25);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+    transition:
+        background var(--transition),
+        box-shadow var(--transition),
+        transform 120ms ease,
+        border-color 120ms ease;
+
+    backdrop-filter: blur(8px);
+
+    /* custom arrow */
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--navy) 50%),
+        linear-gradient(135deg, var(--navy) 50%, transparent 50%);
+    background-position:
+        calc(100% - 18px) 50%,
+        calc(100% - 13px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.lang-select:hover {
+    background: #ffffff;
+    border-color: rgba(11, 28, 45, 0.4);
+    box-shadow: 0 8px 22px rgba(11, 28, 45, 0.18);
+    transform: translateY(-1px);
+}
+
+.lang-select:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 159, 28, 0.28);
+}
+
+/* OPTIONS */
+.lang-select option {
+    background: #ffffff;
+    color: var(--navy);
+    font-weight: 500;
+}
+
+
+/* Arrow */
+.header-actions::after {
+    content: "▾";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--orange);
+    pointer-events: none;
+}
+
+/* CONTACT */
 .contact-btn {
     background: var(--orange);
     color: #000;
@@ -84,7 +160,7 @@
     font-weight: 600;
 }
 
-/* TOGGLES */
+/* THEME */
 .theme-toggle {
     width: 40px;
     height: 40px;
@@ -94,7 +170,7 @@
     cursor: pointer;
 }
 
-/* MENU BUTTON */
+/* MENU BTN */
 .menu-btn {
     display: none;
     background: none;
@@ -136,7 +212,7 @@
     transform: translateX(0);
 }
 
-/* CLOSE */
+/* MOBILE */
 .mobile-close {
     position: absolute;
     top: 1.2rem;
@@ -146,7 +222,6 @@
     font-size: 1.6rem;
 }
 
-/* MOBILE CONTENT */
 .mobile-inner {
     padding: 6rem 1.8rem 2rem;
     display: flex;
@@ -169,23 +244,6 @@
     align-self: center;
 }
 
-/* LOGO NavLink underline ni butunlay o‘chirish */
-.logo {
-    text-decoration: none !important;
-}
-
-.logo:visited,
-.logo:hover,
-.logo:active {
-    text-decoration: none !important;
-}
-
-/* NavLink active bo‘lganda ham logo ostida chiziq chiqmasin */
-.logo.active {
-    text-decoration: none !important;
-}
-
-
 /* RESPONSIVE */
 @media (max-width: 1024px) {
 
@@ -200,7 +258,7 @@
 }
 
 @media (max-width: 425px) {
-        .logo-img {
-            display: none;
-        }
+    .logo-img {
+        display: none;
+    }
 }

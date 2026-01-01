@@ -39,7 +39,7 @@ export default function Footer() {
                 <div className="footer-section">
                     <h4 className="footer-title">{t("footer.connect")}</h4>
                     <div className="socials icons-only">
-                        <a href="https://instagram.com/__adhamjon18" className="social-icon" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                        <a href="https://instagram.com/_adamvoyage" className="social-icon" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                         <a href="https://www.facebook.com/gayrat.qilichev.9" className="social-icon" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
                         <a href="https://wa.me/998917077291" className="social-icon" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
                         <a href="https://t.me/the_adhamjon" className="social-icon" target="_blank" rel="noopener noreferrer"><FaTelegramPlane /></a>

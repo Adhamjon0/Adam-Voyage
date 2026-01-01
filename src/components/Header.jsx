@@ -7,16 +7,16 @@ import Logo from "./Logo";
 import "./Header.css";
 
 const LANGUAGES = [
+    { code: "uz", label: "O‘zbek" },
     { code: "en", label: "English" },
     { code: "fr", label: "Français" },
     { code: "ru", label: "Русский" },
-    { code: "uz", label: "O‘zbek" },
-    { code: "ja", label: "日本語" },
-    { code: "zh", label: "中文" },
-    { code: "ko", label: "한국어" },
     { code: "de", label: "Deutsch" },
     { code: "es", label: "Español" },
-    { code: "iti", label: "Italiano" },
+    { code: "it", label: "Italiano" },
+    { code: "ja", label: "日本語" },
+    { code: "zh", label: "中文" },
+    { code: "ko", label: "한국어" }
 ];
 
 export default function Header() {
@@ -32,7 +32,7 @@ export default function Header() {
     };
 
     const toggleThemeIcon = () => {
-        setIsDarkIcon((prev) => !prev);
+        setIsDarkIcon(prev => !prev);
     };
 
     const closeMenu = () => {
@@ -63,6 +63,8 @@ export default function Header() {
     return (
         <header className="header">
             <div className="header-container">
+
+                {/* LOGO */}
                 <NavLink to="/" className="logo" onClick={closeMenu}>
                     <Logo />
                 </NavLink>
@@ -77,18 +79,22 @@ export default function Header() {
 
                 {/* DESKTOP ACTIONS */}
                 <div className="header-actions">
-                    <select
-                        onChange={handleLangChange}
-                        value={localStorage.getItem("i18nextLng") || "en"}
-                    >
-                        {LANGUAGES.map((l) => (
-                            <option key={l.code} value={l.code}>{l.label}</option>
-                        ))}
-                    </select>
 
                     <NavLink to="/contact" className="contact-btn">
                         <FiPhone /> {t("nav.contact")}
                     </NavLink>
+                    
+                    <select
+                        className="lang-select"
+                        onChange={handleLangChange}
+                        value={localStorage.getItem("i18nextLng") || "en"}
+                    >
+                        {LANGUAGES.map(l => (
+                            <option key={l.code} value={l.code}>
+                                {l.label}
+                            </option>
+                        ))}
+                    </select>
 
                     <button className="theme-toggle" onClick={toggleThemeIcon}>
                         {isDarkIcon ? <FiMoon /> : <FiSun />}
@@ -96,11 +102,7 @@ export default function Header() {
                 </div>
 
                 {/* HAMBURGER */}
-                <button
-                    className="menu-btn"
-                    onClick={() => setMenuOpen(true)}
-                    aria-label="Menu"
-                >
+                <button className="menu-btn" onClick={() => setMenuOpen(true)}>
                     <FiMenu />
                 </button>
             </div>
@@ -126,7 +128,11 @@ export default function Header() {
                     <NavLink to="/services" onClick={closeMenu}>{t("nav.services")}</NavLink>
                     <NavLink to="/gallery" onClick={closeMenu}>{t("nav.gallery")}</NavLink>
 
-                    <NavLink to="/contact" className="contact-btn mobile-cta" onClick={closeMenu}>
+                    <NavLink
+                        to="/contact"
+                        className="contact-btn mobile-cta"
+                        onClick={closeMenu}
+                    >
                         <FiPhone /> {t("nav.contact")}
                     </NavLink>
 
@@ -135,12 +141,17 @@ export default function Header() {
                         onChange={handleLangChange}
                         value={localStorage.getItem("i18nextLng") || "en"}
                     >
-                        {LANGUAGES.map((l) => (
-                            <option key={l.code} value={l.code}>{l.label}</option>
+                        {LANGUAGES.map(l => (
+                            <option key={l.code} value={l.code}>
+                                {l.label}
+                            </option>
                         ))}
                     </select>
 
-                    <button className="theme-toggle mobile-theme" onClick={toggleThemeIcon}>
+                    <button
+                        className="theme-toggle mobile-theme"
+                        onClick={toggleThemeIcon}
+                    >
                         {isDarkIcon ? <FiMoon /> : <FiSun />}
                     </button>
                 </nav>

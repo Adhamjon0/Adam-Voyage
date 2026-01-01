@@ -151,29 +151,78 @@
 }
 
 /* MOBILE – 425px */
+/* ================= MOBILE FIX – CONTENT PASTGA TUSHADI ================= */
+/* ================= MOBILE – SLIDER SAQLANADI, CONTENT TAGIDA ================= */
 @media (max-width: 425px) {
 
+    /* HERO */
+    .home-hero {
+        display: block;
+        min-height: auto;
+        background: #ffffff;
+    }
+
+    /* SLIDER (IMAGE) */
     .home-bg {
-        background-size: contain;
-        background-position: center top;
-        background-color: #000;
+        position: relative;
+        height: 260px;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.95) contrast(1.05);
     }
 
+    /* OVERLAY – SLIDER USTIDA QOLADI */
+    .home-overlay {
+        position: absolute;
+        inset: 0;
+        display: block;
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, 0.35),
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.05));
+    }
+
+    /* CONTENT – SLIDER TAGIDA */
     .home-content {
-        margin-bottom: 5vh;
-        padding: 1.5rem;
+        position: relative;
+        margin: 0;
+        padding: 2rem 1.4rem 2.4rem;
+        background: #ffffff;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
+    /* TEXT COLORS */
     .home-title {
-        font-size: 2rem;
+        color: #0b1c2d;
+        text-shadow: none;
+    }
+
+    .home-title::after {
+        background: var(--gold);
     }
 
     .home-subtitle {
-        font-size: 0.95rem;
+        color: #0b1c2d;
+        text-shadow: none;
     }
 
+    .home-text {
+        color: #6b7280;
+    }
+
+    /* BUTTONS */
     .home-actions {
-        flex-direction: column;
-        gap: 0.8rem;
+        margin-top: 2rem;
+    }
+
+    .home-btn.primary {
+        background: var(--gold);
+        color: #0b1c2d;
+    }
+
+    .home-btn.outline {
+        border-color: var(--gold);
+        color: var(--gold);
     }
 }
