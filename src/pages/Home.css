@@ -186,7 +186,7 @@
     .home-content {
         position: relative;
         margin: 0;
-        padding: 2rem 1.4rem 2.4rem;
+        padding:2rem 0rem 2.4rem;
         background: #ffffff;
         text-align: center;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
