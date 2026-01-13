@@ -13,6 +13,7 @@ import Intro from "./components/Intro";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Uzb from "./regions/Uzb";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Galery";
 
@@ -72,6 +73,15 @@ const AnimatedRoutes = () => {
           element={
             <motion.div {...motionProps}>
               <Services />
+            </motion.div>
+          }
+        />
+
+        <Route
+          path="/uzbekistan"
+          element={
+            <motion.div {...motionProps}>
+              <Uzb />
             </motion.div>
           }
         />

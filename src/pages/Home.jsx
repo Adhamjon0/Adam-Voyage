@@ -51,7 +51,7 @@ export default function Home() {
                 <title>Adam Voyage | Uzbekistan Travel Agency</title>
                 <meta
                     name="description"
-                    content="Adam Voyage — Uzbekistan bo‘ylab professional sayohat agentligi. Samarqand, Buxoro, Xiva va Ipak yo‘li bo‘ylab eksklyuziv turlar."
+                    content="Adam Voyage - is a professional travel agency in Uzbekistan, offering exclusive tours across Samarkand, Bukhara, Khiva, and the legendary Silk Road. Discover authentic culture, rich history, and unforgettable travel experiences with experienced local guides with over 20 years of expertise.."
                 />
             </Helmet>
 

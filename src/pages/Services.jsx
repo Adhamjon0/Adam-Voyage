@@ -1,16 +1,6 @@
 import React from "react";
 import "./Services.css";
 import { Helmet } from "react-helmet";
-import im1 from "../photos/reg.jpg";
-import im2 from "../photos/buxoroArk.jpg";
-import im3 from "../photos/xiva.jpg";
-import im4 from "../photos/shahrisabz.jpg";
-import im5 from "../photos/toshkent.jpg";
-import im6 from "../photos/qoqon.png";
-import im7 from "../photos/margilan.png";
-import im8 from "../photos/termiz.png";
-import im9 from "../photos/nuk_ser.jpg";
-import im10 from "../photos/far_ser.jpg";
 
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const Services = () => {
 
-    const navigate = useNavigate();
     return (
         <main className="services-page">
             <Helmet>
@@ -173,60 +162,7 @@ const Services = () => {
 
 
                 {/* RIGHT — REGIONS */}
-                <div className="regions-grid">
-                    <div
-                        className="region-card"
-                        onClick={() => navigate("/samarqand")}
-                    >
-                        <img src={im1} alt="Samarqand" className="region-img" />
-                        <div className="region-name">Samarqand</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im2} alt="Buxoro" className="region-img" />
-                        <div className="region-name">Buxoro</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im3} alt="Xiva" className="region-img" />
-                        <div className="region-name">Xiva</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im4} alt="Shahrisabz" className="region-img" />
-                        <div className="region-name">Shahrisabz</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im5} alt="Toshkent" className="region-img" />
-                        <div className="region-name">Toshkent</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im6} alt="Qo‘qon" className="region-img" />
-                        <div className="region-name">Qo‘qon</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im7} alt="Marg‘ilon" className="region-img" />
-                        <div className="region-name">Marg‘ilon</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im8} alt="Termiz" className="region-img" />
-                        <div className="region-name">Termiz</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im9} alt="Nukus" className="region-img" />
-                        <div className="region-name">Nukus</div>
-                    </div>
-
-                    <div className="region-card">
-                        <img src={im10} alt="Farg‘ona" className="region-img" />
-                        <div className="region-name">Farg‘ona</div>
-                    </div>
-                </div>
+                
 
 
 

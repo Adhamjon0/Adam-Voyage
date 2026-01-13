@@ -74,6 +74,7 @@ export default function Header() {
                     <NavLink to="/" end className="nav-link">{t("nav.home")}</NavLink>
                     <NavLink to="/about" className="nav-link">{t("nav.about")}</NavLink>
                     <NavLink to="/services" className="nav-link">{t("nav.services")}</NavLink>
+                    <NavLink to="/uzb" className="nav-link">{t("O'zbekiston")}</NavLink>
                     <NavLink to="/gallery" className="nav-link">{t("nav.gallery")}</NavLink>
                 </nav>
 
@@ -83,7 +84,7 @@ export default function Header() {
                     <NavLink to="/contact" className="contact-btn">
                         <FiPhone /> {t("nav.contact")}
                     </NavLink>
-                    
+
                     <select
                         className="lang-select"
                         onChange={handleLangChange}
@@ -126,6 +127,7 @@ export default function Header() {
                     <NavLink to="/" end onClick={closeMenu}>{t("nav.home")}</NavLink>
                     <NavLink to="/about" onClick={closeMenu}>{t("nav.about")}</NavLink>
                     <NavLink to="/services" onClick={closeMenu}>{t("nav.services")}</NavLink>
+                    <NavLink to="/uzb" onClick={closeMenu}>{t("O'zbekiston")}</NavLink>
                     <NavLink to="/gallery" onClick={closeMenu}>{t("nav.gallery")}</NavLink>
 
                     <NavLink
